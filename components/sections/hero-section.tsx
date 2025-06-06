@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-8 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background/20 z-0" />
 
@@ -25,14 +25,14 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <motion.div
+            {/* <motion.div
               className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               Transformação de MVPs de IA
-            </motion.div>
+            </motion.div> */}
 
             <motion.h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
@@ -40,9 +40,8 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Transformamos MVPs de IA em produtos escaláveis, seguros e prontos
-              para o mundo real. Sua ideia de IA validada merece uma base tão
-              inovadora quanto ela.
+              Ajudando visionários a transformar ideias ou MVPs em produtos
+              escaláveis.
             </motion.h1>
 
             <motion.p
@@ -51,8 +50,8 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Transformamos MVPs de IA em produtos escaláveis, seguros e prontos
-              para o mundo real.
+              Nossa missão é construir a infraestrutura técnica que sua ideia
+              inovadora merece.
             </motion.p>
 
             <motion.div
@@ -69,7 +68,7 @@ export function HeroSection() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Quero transformar meu MVP
+                Entre em contato
                 <ChevronRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
@@ -82,7 +81,7 @@ export function HeroSection() {
             className="relative"
           >
             <Image
-              src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src="/hero-illustration.png"
               alt="AI and Cloud Infrastructure"
               width={600}
               height={400}
@@ -108,10 +107,8 @@ export function HeroSection() {
                   <div className="h-3 w-3 rounded-full bg-green-500" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Deployment concluído</p>
-                  <p className="text-xs text-muted-foreground">
-                    Infraestrutura pronta
-                  </p>
+                  <p className="text-sm font-medium">Escalavel</p>
+                  <p className="text-xs text-muted-foreground"></p>
                 </div>
               </div>
             </motion.div>
@@ -126,13 +123,37 @@ export function HeroSection() {
                   duration: 0.5,
                 },
               }}
-              className="absolute -top-10 right-10 bg-card p-3 rounded-lg shadow-lg border border-border"
+              className="absolute top-0 right-0 bg-card p-3 rounded-lg shadow-lg border border-border"
             >
               <div className="flex items-center space-x-3">
                 <div className="bg-blue-500/20 p-2 rounded-full">
                   <div className="h-2 w-2 rounded-full bg-blue-500" />
                 </div>
-                <p className="text-sm font-medium">IA Otimizada</p>
+                <p className="text-sm font-medium">Segurança</p>
+                <p className="text-xs text-muted-foreground"></p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  delay: 0.8,
+                  duration: 0.5,
+                },
+              }}
+              className="absolute top-0 left-0 bg-card p-4 rounded-lg shadow-lg border border-border"
+            >
+              <div className="flex items-center space-x-3">
+                <div className="bg-purple-500/20 p-2 rounded-full">
+                  <div className="h-3 w-3 rounded-full bg-purple-500" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium">Projeto Eficiente</p>
+                  <p className="text-xs text-muted-foreground"></p>
+                </div>
               </div>
             </motion.div>
           </motion.div>

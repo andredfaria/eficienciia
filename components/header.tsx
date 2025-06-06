@@ -5,6 +5,7 @@ import { motion, useScroll } from "framer-motion";
 import { ChevronRightIcon, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +40,18 @@ export function Header() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          {/* Logo can be replaced with an actual image */}
-          Eficienci IA
+          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <img
+              src="/logo.png"
+              alt="Eficienci IA Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
+            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              Eficienci IA
+            </span>
+          </Link>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -51,7 +62,7 @@ export function Header() {
             className="rounded-full"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Quero transformar meu MVP
+            Entre em contato
             <ChevronRightIcon className="ml-1 h-4 w-4" />
           </Button>
         </nav>
@@ -84,7 +95,7 @@ export function Header() {
               }}
               className="w-full rounded-full"
             >
-              Quero transformar meu MVP
+              Entre em contato
               <ChevronRightIcon className="ml-1 h-4 w-4" />
             </Button>
           </div>
@@ -98,7 +109,8 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
   const navItems = [
     { href: "#about", label: "Sobre Nós" },
     { href: "#solution", label: "Solução" },
-    { href: "#value", label: "Por que Evoluir?" },
+    { href: "/project", label: "Projetos" },
+    // { href: "#value", label: "Por que Evoluir?" },
     { href: "#contact", label: "Contato" },
   ];
 

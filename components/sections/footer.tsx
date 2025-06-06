@@ -18,10 +18,12 @@ export function Footer() {
             viewport={{ once: true }}
             className="md:col-span-2"
           >
-            <div className="text-2xl font-bold text-primary mb-4">TransformAI</div>
+            <div className="text-2xl font-bold text-primary mb-4">
+              Eficienci IA
+            </div>
             <p className="text-muted-foreground max-w-md">
-              Transformamos MVPs de IA em produtos escaláveis, seguros e prontos para o mercado. 
-              Nossa missão é construir a infraestrutura técnica que sua ideia inovadora merece.
+              Nossa missão é construir a infraestrutura técnica
+              que sua ideia inovadora merece.
             </p>
           </motion.div>
 
@@ -34,17 +36,26 @@ export function Footer() {
             <h3 className="font-medium text-lg mb-4">Empresa</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="#about"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link href="#solution" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="#solution"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Nossa Solução
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="#contact"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Contato
                 </Link>
               </li>
@@ -60,19 +71,25 @@ export function Footer() {
             <h3 className="font-medium text-lg mb-4">Legal</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Termos de Uso
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Política de Privacidade
                 </Link>
               </li>
               <li>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors flex items-center"
                 >
@@ -92,7 +109,7 @@ export function Footer() {
           className="border-t border-border mt-12 pt-6 text-center"
         >
           <p className="text-muted-foreground">
-            © {currentYear} TransformAI. Todos os direitos reservados.
+            © {currentYear} Eficienci IA. Todos os direitos reservados.
           </p>
           <p className="text-muted-foreground mt-2 font-medium">
             Do MVP à robustez: sua IA merece o próximo nível.

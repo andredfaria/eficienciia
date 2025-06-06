@@ -66,29 +66,63 @@ export function ContactSection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Formulário enviado com sucesso!",
-      description: "Entraremos em contato em breve.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      // Prepare the message body with all form fields
+      const messageBody = `
+        Nome: ${values.name}
+        Email: ${values.email}
+        Ideia do Projeto: ${values.projectIdea}
+        Estágio do Projeto: ${values.projectStage}
+        Canal de Vendas: ${values.hasSalesChannel}
+        Público-alvo: ${values.targetAudience}
+        Dor que Resolve: ${values.painPoint}
+        Links do Projeto: ${values.projectLinks || 'Não informado'}
+      `;
+
+      const formData = new FormData();
+      formData.append('name', values.name);
+      formData.append('email', values.email);
+      formData.append('message', messageBody);
+
+      // Send the form data to FormSubmit
+      const response = await fetch('https://formsubmit.co/adfariacarvalho@gmail.com', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Formulário enviado com sucesso!",
+          description: "Entraremos em contato em breve.",
+        });
+        form.reset();
+      } else {
+        throw new Error('Falha ao enviar o formulário');
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar formulário",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive"
+      });
+    }
   }
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact" className="py-12 bg-muted/30">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Vamos dar o próximo passo no seu projeto de IA?
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+            Vamos dar o próximo passo no seu projeto?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Conte-nos sobre sua ideia e como podemos ajudar a transformá-la em um produto robusto.
           </p>
         </motion.div>
@@ -98,21 +132,21 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-50px" }}
-          className="max-w-3xl mx-auto bg-card rounded-xl shadow-lg border border-border p-6 md:p-8"
+          className="max-w-2xl mx-auto bg-card rounded-lg shadow-lg border border-border p-4 md:p-6"
         >
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Nome</FormLabel>
+                      <FormLabel className="text-sm">Nome</FormLabel>
                       <FormControl>
-                        <Input placeholder="Seu nome completo" {...field} />
+                        <Input placeholder="Seu nome completo" {...field} className="h-9" />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-xs" />
                     </FormItem>
                   )}
                 />
@@ -122,11 +156,11 @@ export function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel className="text-sm">Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="seu@email.com" {...field} />
+                        <Input placeholder="seu@email.com" {...field} className="h-9" />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-xs" />
                     </FormItem>
                   )}
                 />
@@ -137,29 +171,29 @@ export function ContactSection() {
                 name="projectIdea"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Ideia do projeto</FormLabel>
+                    <FormLabel className="text-sm">Ideia do projeto</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Descreva brevemente o que seu projeto faz"
-                        className="resize-none"
+                        className="resize-none h-20"
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="projectStage"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Em que estágio está o projeto?</FormLabel>
+                      <FormLabel className="text-sm">Estágio do projeto</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-9">
                             <SelectValue placeholder="Selecione o estágio" />
                           </SelectTrigger>
                         </FormControl>
@@ -171,7 +205,7 @@ export function ContactSection() {
                           <SelectItem value="other">Outro</SelectItem>
                         </SelectContent>
                       </Select>
-                      <FormMessage />
+                      <FormMessage className="text-xs" />
                     </FormItem>
                   )}
                 />
@@ -181,10 +215,10 @@ export function ContactSection() {
                   name="hasSalesChannel"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Já tem canal de vendas?</FormLabel>
+                      <FormLabel className="text-sm">Canal de vendas</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="h-9">
                             <SelectValue placeholder="Selecione uma opção" />
                           </SelectTrigger>
                         </FormControl>
@@ -193,7 +227,7 @@ export function ContactSection() {
                           <SelectItem value="no">Não</SelectItem>
                         </SelectContent>
                       </Select>
-                      <FormMessage />
+                      <FormMessage className="text-xs" />
                     </FormItem>
                   )}
                 />
@@ -204,11 +238,11 @@ export function ContactSection() {
                 name="targetAudience"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Qual o público-alvo?</FormLabel>
+                    <FormLabel className="text-sm">Público-alvo</FormLabel>
                     <FormControl>
-                      <Input placeholder="Descreva seu público-alvo" {...field} />
+                      <Input placeholder="Descreva seu público-alvo" {...field} className="h-9" />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
@@ -218,15 +252,15 @@ export function ContactSection() {
                 name="painPoint"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Que dor o projeto resolve?</FormLabel>
+                    <FormLabel className="text-sm">Dor que resolve</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Qual problema seu projeto soluciona para os usuários"
-                        className="resize-none"
+                        className="resize-none h-20"
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
@@ -236,17 +270,17 @@ export function ContactSection() {
                 name="projectLinks"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Links do projeto (opcional)</FormLabel>
+                    <FormLabel className="text-sm">Links do projeto (opcional)</FormLabel>
                     <FormControl>
-                      <Input placeholder="Sites, redes sociais, landing pages, etc." {...field} />
+                      <Input placeholder="Sites, redes sociais, landing pages, etc." {...field} className="h-9" />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
 
-              <Button type="submit" size="lg" className="w-full">
-                Enviar e conversar com um especialista
+              <Button type="submit" className="w-full h-9">
+                Enviar
               </Button>
             </form>
           </Form>
