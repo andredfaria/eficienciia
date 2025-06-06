@@ -9,8 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Eficienci IA | Do MVP ao Produto Robusto',
-  description: 'Transformamos MVPs de IA em produtos escaláveis, seguros e prontos para o mundo real.',
+  title: "Eficienci IA | Do MVP ao Produto Robusto",
+  description:
+    "Transformamos MVPs de IA em produtos escaláveis, seguros e prontos para o mundo real.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
