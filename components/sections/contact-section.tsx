@@ -1,9 +1,5 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -13,16 +9,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -58,9 +51,6 @@ export function ContactSection() {
       name: "",
       email: "",
       projectIdea: "",
-      projectStage: "",
-      hasSalesChannel: "",
-      targetAudience: "",
       painPoint: "",
       projectLinks: "",
     },
@@ -72,12 +62,9 @@ export function ContactSection() {
       const messageBody = `
         Nome: ${values.name}
         Email: ${values.email}
-        Ideia do Projeto: ${values.projectIdea}
-        Estágio do Projeto: ${values.projectStage}
-        Canal de Vendas: ${values.hasSalesChannel}
-        Público-alvo: ${values.targetAudience}
-        Dor que Resolve: ${values.painPoint}
-        Links do Projeto: ${values.projectLinks || 'Não informado'}
+        Objetivos: ${values.projectIdea}
+        Principal desafio de negócio: ${values.painPoint}
+        Site ou rede social (opcional): ${values.projectLinks || 'Não informado'}
       `;
 
       const formData = new FormData();
@@ -110,7 +97,8 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-12 bg-muted/30">
+    <section id="contact" className="py-12 bg-background relative">
+      <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.16]" />
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -120,10 +108,10 @@ export function ContactSection() {
           className="text-center mb-8"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-2">
-            Vamos dar o próximo passo no seu projeto?
+            Entre em contato conosco
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Conte-nos sobre sua ideia e como podemos ajudar a transformá-la em um produto robusto.
+            Conte-nos sobre sua necessidade. Vamos desenhar uma solução de IA personalizada, com foco em performance, ROI e escalabilidade.
           </p>
         </motion.div>
 
@@ -132,7 +120,7 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-50px" }}
-          className="max-w-2xl mx-auto bg-card rounded-lg shadow-lg border border-border p-4 md:p-6"
+          className="max-w-2xl mx-auto bg-card/80 backdrop-blur-md rounded-lg shadow-lg border border-border p-4 md:p-6 neon-ring"
         >
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -171,76 +159,13 @@ export function ContactSection() {
                 name="projectIdea"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm">Ideia do projeto</FormLabel>
+                     <FormLabel className="text-sm">Objetivos</FormLabel>
                     <FormControl>
-                      <Textarea
-                        placeholder="Descreva brevemente o que seu projeto faz"
+                       <Textarea
+                        placeholder="Descreva brevemente o objetivo e o impacto esperado (eficiência, receita, redução de custos)"
                         className="resize-none h-20"
                         {...field}
                       />
-                    </FormControl>
-                    <FormMessage className="text-xs" />
-                  </FormItem>
-                )}
-              />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="projectStage"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm">Estágio do projeto</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="h-9">
-                            <SelectValue placeholder="Selecione o estágio" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="validated_mvp">MVP validado</SelectItem>
-                          <SelectItem value="not_validated">Sem validação</SelectItem>
-                          <SelectItem value="paying_customers">Já tenho pagantes</SelectItem>
-                          <SelectItem value="seeking_investment">Buscando investimento</SelectItem>
-                          <SelectItem value="other">Outro</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage className="text-xs" />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="hasSalesChannel"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm">Canal de vendas</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="h-9">
-                            <SelectValue placeholder="Selecione uma opção" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="yes">Sim</SelectItem>
-                          <SelectItem value="no">Não</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage className="text-xs" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <FormField
-                control={form.control}
-                name="targetAudience"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-sm">Público-alvo</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Descreva seu público-alvo" {...field} className="h-9" />
                     </FormControl>
                     <FormMessage className="text-xs" />
                   </FormItem>
@@ -252,10 +177,10 @@ export function ContactSection() {
                 name="painPoint"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm">Dor que resolve</FormLabel>
+                       <FormLabel className="text-sm">Principal desafio de negócio</FormLabel>
                     <FormControl>
-                      <Textarea
-                        placeholder="Qual problema seu projeto soluciona para os usuários"
+                       <Textarea
+                        placeholder="Quais indicadores você quer melhorar (tempo, custo, taxas de conversão, satisfação)?"
                         className="resize-none h-20"
                         {...field}
                       />
@@ -270,9 +195,9 @@ export function ContactSection() {
                 name="projectLinks"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-sm">Links do projeto (opcional)</FormLabel>
+                    <FormLabel className="text-sm">Site ou rede social (opcional)</FormLabel>
                     <FormControl>
-                      <Input placeholder="Sites, redes sociais, landing pages, etc." {...field} className="h-9" />
+                      <Input placeholder="https://www.seu-site.com.br" {...field} className="h-9" />
                     </FormControl>
                     <FormMessage className="text-xs" />
                   </FormItem>

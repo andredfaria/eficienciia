@@ -1,58 +1,73 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LayoutIcon, LockIcon, Scale, ServerIcon, DollarSign, Globe, Code, Database } from "lucide-react";
+import { LayoutIcon, LockIcon, Scale, ServerIcon, DollarSign, Globe, Code, Database, Calendar, MessageCircle, Mail, AudioLines, ChartColumnBig } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ProblemSolutionSection() {
   const solutions = [
     {
-      icon: <LayoutIcon className="h-12 w-12 text-chart-1" />,
-      title: "Arquitetura Sólida",
+      category: "Whatsapp",
+      icon: <MessageCircle className="h-12 w-12 text-primary" />,
+      title: "Atendimento automático",
       description:
-        "Transformamos código experimental em arquiteturas robustas, escaláveis e bem documentadas.",
+        "Atenda automaticamente, 24/7, reduzindo custos e escalando sem limites. Responde dúvidas, consulta dados e encaminha solicitações.",
     },
     {
-      icon: <Scale className="h-12 w-12 text-chart-2" />,
-      title: "Escalabilidade Pronta",
+      category: "Whatsapp",
+      icon: <Calendar className="h-12 w-12 text-primary" />,
+      title: "Agendamento automático",
       description:
-        "Preparamos sua infraestrutura para suportar de dezenas a milhões de usuários.",
+        "Agenda e confirma consultas, remarcações e exames. Sincroniza horários com o seu calendário e sistemas em tempo real.",
     },
     {
-      icon: <LockIcon className="h-12 w-12 text-chart-3" />,
-      title: "Segurança Implementada",
+      category: "Whatsapp",
+      icon: <DollarSign className="h-12 w-12 text-primary" />,
+      title: "Remarketing automático",
       description:
-        "Protegemos seus dados com criptografia, autenticação segura e padrões LGPD/GDPR. Seu produto fica pronto para auditorias, integrações e confiança de investidores.",
+        "Recupere carrinhos e reengaje leads com jornadas multicanal baseadas em eventos, segmentos e janelas de tempo.",
     },
     {
-      icon: <DollarSign className="h-12 w-12 text-chart-4" />,
-      title: "Integração com infraestrutura Financeira",
+      category: "Automação",
+      icon: <ServerIcon className="h-12 w-12 text-primary" />,
+      title: "Integração entre CRM e ERP",
       description:
-        "Integramos com a infraestrutura financeira para facilitar o uso do produto.",
+        "Conecte CRM/ERP para ler e atualizar contatos, negócios, pedidos e tickets, mantendo os dados sempre consistentes.",
     },
     {
-      icon: <ServerIcon className="h-12 w-12 text-chart-5" />,
-      title: "Especialização em IA",
+        category: "Automação",
+      icon: <AudioLines className="h-12 w-12 text-primary" />,
+      title: "Áudio automático (envio e recepção)",
       description:
-        "Otimizamos seus modelos e pipelines de IA para performance, custo e experiência personalizada.",
+        "Envie e transcreva áudios automaticamente. Suporte a TTS e STT com múltiplas vozes e idiomas.",
     },
     {
-      icon: <Globe className="h-12 w-12 text-chart-3" />,
-      title: "Sua ideia no mercado",
+      category: "Automação",
+      icon: <Mail className="h-12 w-12 text-primary" />,
+      title: "E-mails automatizados",
       description:
-        "Transformamos sua ideia em produto, com a infraestrutura técnica que ela merece. Aplicamos práticas modernas de SEO e marketing digital para garantir o sucesso do seu produto.",
+        "Crie fluxos transacionais e de marketing com templates, variáveis dinâmicas e testes A/B para maximizar conversão.",
     },
     {
-      icon: <Database className="h-12 w-12 text-chart-1" />,
-      title: "IA com contexto",
+      category: "Dados",
+      icon: <Globe className="h-12 w-12 text-primary" />,
+      title: "Estruturação e organização de bases",
       description:
-        "Criamos pipelines inteligentes com banco de dados vetorial e personalização por usuário, para que sua IA fale com contexto real — e não pareça um chatbot genérico.",
+        "Normalize, higienize e enriqueça bases de dados para relatórios confiáveis e modelos de IA mais precisos.",
     },
     {
-      icon: <Code className="h-12 w-12 text-chart-2" />,
-      title: "Código que cresce com você",
+      category: "Dados",
+      icon: <Database className="h-12 w-12 text-primary" />,
+      title: "Coleta de dados em conversa",
       description:
-        "MVPs quebram. Nós reestruturamos seu código com padrões profissionais, para que ele suporte novas features, times maiores e crescimento real sem virar um caos.",
+        "Capta dados consentidos durante a conversa (nome, preferências, objetivos) para personalizar jornadas e próximas interações.",
+    },
+    {
+      category: "Dados",
+      icon: <ChartColumnBig className="h-12 w-12 text-primary" />,
+      title: "Dashboard de performance",
+      description:
+        "Visualize métricas de atendimento, conversão e eficiência para tomar decisões estratégicas.",
     },
   ];
 
@@ -76,41 +91,46 @@ export function ProblemSolutionSection() {
   };
 
   return (
-    <section id="solution" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="solution" className="py-20 bg-background relative">
+      <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.2]" />
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-16 max-w-3xl mx-auto text-center"
+          className="mb-14 max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Resolvemos o gap entre MVP e produto</h2>
-          <p className="text-xl text-muted-foreground">
-            
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Soluções</h2>
+          <p className="text-muted-foreground text-base md:text-lg">
+            Automação ponta a ponta para atendimento, dados e crescimento.
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Visual connection between problem and solution */}
-          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-16 bg-primary/30 hidden lg:block" /> */}
-          
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
           >
             {solutions.map((solution, index) => (
               <motion.div key={solution.title} variants={itemVariants}>
-                <Card className="h-full bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                  <CardHeader className="pb-2">
-                    <div className="mb-4">{solution.icon}</div>
-                    <CardTitle className="text-xl">{solution.title}</CardTitle>
+                <Card className="group h-full rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all hover:neon-ring min-h-[320px] md:min-h-[340px]">
+                  <CardHeader className="pb-1">
+                    <div className="mb-3">
+                      <span className="inline-flex items-center rounded-full border border-border/60 bg-background/60 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                        {solution.category}
+                      </span>
+                    </div>
+                    <div className="mb-5 inline-flex items-center justify-center rounded-xl bg-primary/10 p-4 text-primary neon-ring">
+                      {solution.icon}
+                    </div>
+                    <CardTitle className="text-2xl tracking-tight">{solution.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-muted-foreground text-base">
+                    <CardDescription className="text-muted-foreground text-base md:text-lg leading-relaxed">
                       {solution.description}
                     </CardDescription>
                   </CardContent>

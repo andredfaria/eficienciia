@@ -48,7 +48,7 @@ export function AboutSection() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Nossa equipe tem experiência em engenharia de software, inteligência
             artificial, ciência de dados e estratégia de produto. Nós somos a
-            Eficienci IA, uma empresa que transforma ideias em produtos
+            Eficienci IA, uma empresa que automatiza processos e evolui ideias em produtos
             escaláveis.
           </p>
         </motion.div>
@@ -101,7 +101,7 @@ export function AboutSection() {
             Conheça nossos projetos
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Veja alguns dos projetos que desenvolvemos e como transformamos ideias em soluções inovadoras.
+            Veja alguns dos projetos que desenvolvemos e como automatizamos operações com soluções de IA inovadoras.
           </p>
           <Button asChild size="lg" className="rounded-full">
             <Link href="/project">

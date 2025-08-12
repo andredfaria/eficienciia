@@ -8,7 +8,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-card border-t border-border relative">
+      <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.1]" />
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <motion.div
@@ -18,12 +19,11 @@ export function Footer() {
             viewport={{ once: true }}
             className="md:col-span-2"
           >
-            <div className="text-2xl font-bold text-primary mb-4">
+            <div className="text-2xl font-bold text-primary neon-text mb-4">
               Eficienci IA
             </div>
             <p className="text-muted-foreground max-w-md">
-              Nossa missão é construir a infraestrutura técnica
-              que sua ideia inovadora merece.
+              IA sob medida, servidores de alta performance e automações inteligentes para gerar eficiência, previsibilidade e vantagem competitiva.
             </p>
           </motion.div>
 
@@ -37,18 +37,18 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#about"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Sobre Nós
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="#solution"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Nossa Solução
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#valores"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Valores
                 </Link>
               </li>
               <li>
@@ -112,7 +112,7 @@ export function Footer() {
             © {currentYear} Eficienci IA. Todos os direitos reservados.
           </p>
           <p className="text-muted-foreground mt-2 font-medium">
-            Do MVP à robustez: sua IA merece o próximo nível.
+            Soluções de IA personalizadas além da automação.
           </p>
         </motion.div>
       </div>

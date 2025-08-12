@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Eficienci IA | Do MVP ao Produto Robusto",
   description:
-    "Transformamos MVPs de IA em produtos escaláveis, seguros e prontos para o mundo real.",
+    "Automatizamos e evoluímos MVPs de IA para produtos escaláveis, seguros e prontos para o mundo real.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="pt-BR" className="dark scroll-smooth overflow-x-hidden">
+      <body className={`${inter.className} antialiased overflow-x-hidden selection:bg-primary/20 selection:text-foreground`}>
         {children}
         <Toaster />
       </body>

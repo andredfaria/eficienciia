@@ -26,7 +26,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border shadow-sm py-2"
+          ? "bg-background/80 backdrop-blur-md border-b border-border neon-border neon-ring py-2"
           : "bg-transparent py-4"
       )}
       initial={{ y: -100 }}
@@ -35,7 +35,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <motion.div
-          className="text-2xl font-bold text-primary"
+          className="text-2xl font-bold text-primary neon-text"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -48,7 +48,7 @@ export function Header() {
               height={40}
               className="h-10 w-auto"
             />
-            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Eficienci IA
             </span>
           </Link>
@@ -59,10 +59,10 @@ export function Header() {
           <NavLinks />
           <Button 
             size="sm" 
-            className="rounded-full"
+            className="rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Entre em contato
+            Fale com Especialistas
             <ChevronRightIcon className="ml-1 h-4 w-4" />
           </Button>
         </nav>
@@ -80,7 +80,7 @@ export function Header() {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <motion.div
-          className="md:hidden bg-card/95 backdrop-blur-md shadow-lg absolute top-full left-0 right-0"
+          className="md:hidden bg-card/95 backdrop-blur-md shadow-lg absolute top-full left-0 right-0 neon-ring"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
@@ -93,9 +93,9 @@ export function Header() {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 setIsMenuOpen(false);
               }}
-              className="w-full rounded-full"
+              className="w-full rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
             >
-              Entre em contato
+              Fale com Especialistas
               <ChevronRightIcon className="ml-1 h-4 w-4" />
             </Button>
           </div>
@@ -107,8 +107,8 @@ export function Header() {
 
 function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () => void }) {
   const navItems = [
-    { href: "#about", label: "Sobre Nós" },
     { href: "#solution", label: "Solução" },
+    { href: "/valores", label: "Valores" },
     { href: "/project", label: "Projetos" },
     // { href: "#value", label: "Por que Evoluir?" },
     { href: "#contact", label: "Contato" },

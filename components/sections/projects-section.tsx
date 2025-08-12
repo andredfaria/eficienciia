@@ -58,9 +58,8 @@ export function ProjectsSection() {
             Nossos Projetos
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Conheça alguns dos projetos que desenvolvemos, transformando ideias
-            inovadoras em soluções robustas e escaláveis de inteligência
-            artificial.
+            Conheça alguns dos projetos que desenvolvemos, automatizando fluxos
+            e elevando soluções de IA a patamares de robustez e escala.
           </p>
         </motion.div>
 
@@ -161,8 +160,8 @@ export function ProjectsSection() {
             Quer ver seu projeto aqui?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Entre em contato conosco e vamos transformar sua ideia em uma
-            solução robusta e escalável.
+            Entre em contato e vamos automatizar seus processos com uma solução
+            robusta e escalável de IA.
           </p>
           <Button
               size="lg"
