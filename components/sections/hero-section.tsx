@@ -106,7 +106,7 @@ export function HeroSection() {
           >
             <Image
               src="/hero-illustration.png"
-              alt="AI and Cloud Infrastructure"
+              alt="Agentes de IA e automação empresarial — Eficienci IA"
               width={600}
               height={400}
               className="rounded-xl shadow-2xl object-cover neon-ring"

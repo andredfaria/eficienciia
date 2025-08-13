@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { LayoutIcon, LockIcon, Scale, ServerIcon, DollarSign, Globe, Code, Database, Calendar, MessageCircle, Mail, AudioLines, ChartColumnBig } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { AudioLines, Calendar, ChartColumnBig, Database, DollarSign, Globe, Mail, MessageCircle, ServerIcon } from "lucide-react";
 
 export function ProblemSolutionSection() {
   const solutions = [
@@ -101,9 +101,9 @@ export function ProblemSolutionSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-14 max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Soluções</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Soluções de IA e Automação</h2>
           <p className="text-muted-foreground text-base md:text-lg">
-            Automação ponta a ponta para atendimento, dados e crescimento.
+            Agentes de IA, automação no WhatsApp e integrações entre CRM/ERP para atendimento 24/7, eficiência operacional e crescimento previsível.
           </p>
         </motion.div>
 

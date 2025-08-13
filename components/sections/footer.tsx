@@ -45,10 +45,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#valores"
+                  href="#solution"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Valores
+                  Serviços
                 </Link>
               </li>
               <li>

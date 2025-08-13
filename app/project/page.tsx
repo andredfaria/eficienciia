@@ -4,9 +4,9 @@ import { ProjectsSection } from '@/components/sections/projects-section';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Projetos | Eficienci IA",
+  title: "Projetos de IA e Automação | Eficienci IA",
   description:
-    "Conheça os projetos desenvolvidos pela Eficienci IA - Do MVP ao Produto Robusto.",
+    "Portfólio de projetos com agentes de IA, automações no WhatsApp e integrações CRM/ERP. Veja casos com dashboards, coleta de dados e remarketing.",
   icons: {
     icon: "/favicon.ico",
   },

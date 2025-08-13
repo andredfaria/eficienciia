@@ -108,10 +108,10 @@ export function ContactSection() {
           className="text-center mb-8"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-2">
-            Entre em contato conosco
+            Fale com Especialistas em IA
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Conte-nos sobre sua necessidade. Vamos desenhar uma solução de IA personalizada, com foco em performance, ROI e escalabilidade.
+            Conte-nos sobre sua necessidade. Desenhamos soluções de IA personalizadas com foco em performance, ROI e escalabilidade.
           </p>
         </motion.div>
 

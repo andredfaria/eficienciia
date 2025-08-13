@@ -55,11 +55,10 @@ export function ProjectsSection() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Nossos Projetos
+            Projetos de IA e Automação
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Conheça alguns dos projetos que desenvolvemos, automatizando fluxos
-            e elevando soluções de IA a patamares de robustez e escala.
+            Conheça projetos com agentes de IA, automações no WhatsApp e integrações de dados que escalam com segurança e performance.
           </p>
         </motion.div>
 
