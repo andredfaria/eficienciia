@@ -40,14 +40,6 @@ export function Footer() {
                   href="#solution"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Nossa Solução
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#solution"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
                   Serviços
                 </Link>
               </li>
@@ -58,44 +50,6 @@ export function Footer() {
                 >
                   Contato
                 </Link>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="font-medium text-lg mb-4">Legal</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Termos de Uso
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Política de Privacidade
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors flex items-center"
-                >
-                  LinkedIn
-                  <ExternalLink className="ml-1 h-3 w-3" />
-                </a>
               </li>
             </ul>
           </motion.div>

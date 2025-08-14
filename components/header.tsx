@@ -108,8 +108,6 @@ export function Header() {
 function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () => void }) {
   const navItems = [
     { href: "#solution", label: "Serviços" },
-    { href: "/project", label: "Projetos" },
-    // { href: "#value", label: "Por que Evoluir?" },
     { href: "#contact", label: "Contato" },
   ];
 

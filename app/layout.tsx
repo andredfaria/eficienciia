@@ -3,13 +3,14 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster";
 import Script from 'next/script';
+import { GoogleAnalytics } from '@/components/seo/GoogleAnalytics';
 
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://eficienciia.com.br';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -92,6 +93,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased overflow-x-hidden selection:bg-primary/20 selection:text-foreground`}>
         {children}
         <Toaster />
+        <GoogleAnalytics />
         <Script
           id="ld-json-organization"
           type="application/ld+json"
