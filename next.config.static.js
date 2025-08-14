@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Exportação estática apenas em produção quando necessário
-  // Comentado para permitir middleware em desenvolvimento
-  // output: 'export',
+  // Configuração para exportação estática
+  output: 'export',
   
   // Configurações de ESLint
   eslint: {

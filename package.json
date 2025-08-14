@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:static": "cp next.config.static.js next.config.js && next build && cp next.config.js next.config.static.js",
+    "export": "npm run build:static"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
