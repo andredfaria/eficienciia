@@ -27,32 +27,6 @@ export function Footer() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="font-medium text-lg mb-4">Empresa</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#solution"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Serviços
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Contato
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
         </div>
 
         <motion.div
