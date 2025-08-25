@@ -21,6 +21,19 @@ export function Header() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // altura aproximada do header
+      const elementPosition = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <motion.header
       className={cn(
@@ -60,7 +73,7 @@ export function Header() {
           <Button 
             size="sm" 
             className="rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('contact')}
           >
             Fale com Especialistas
             <ChevronRightIcon className="ml-1 h-4 w-4" />
@@ -90,7 +103,7 @@ export function Header() {
             <NavLinks mobile onClick={() => setIsMenuOpen(false)} />
             <Button 
               onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                scrollToSection('contact');
                 setIsMenuOpen(false);
               }}
               className="w-full rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
@@ -107,10 +120,26 @@ export function Header() {
 
 function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () => void }) {
   const navItems = [
-    { href: "#pillars", label: "Pilares" },
-    { href: "#solution", label: "Serviços" },
+    { href: "#services", label: "Serviços" },
+    { href: "#methodology", label: "Metodologia" },
+    { href: "#solution", label: "Soluções" },
     { href: "#contact", label: "Contato" },
   ];
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // altura aproximada do header
+      const elementPosition = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+    if (onClick) onClick();
+  };
 
   return (
     <>
@@ -119,10 +148,10 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
           key={item.href}
           href={item.href}
           className={cn(
-            "text-foreground/80 hover:text-primary transition-colors",
+            "text-foreground/80 hover:text-primary transition-colors cursor-pointer",
             mobile && "block py-2 text-lg"
           )}
-          onClick={onClick}
+          onClick={(e) => handleClick(e, item.href.replace('#', ''))}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 * index }}

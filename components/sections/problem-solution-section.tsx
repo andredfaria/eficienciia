@@ -26,23 +26,16 @@ export function ProblemSolutionSection() {
     {
       category: "Consultoria Estratégica", 
       icon: <FileBarChart className="h-12 w-12 text-primary" />,
-      title: "Relatório detalhado com roadmap",
-      description: "Documento completo com plano de implementação estruturado, cronograma e marcos para transformação digital.",
+      title: "Roadmap de implementação",
+      description: "Plano de implementação estruturado, com tempos de entrega, valor e cronograma para transformação digital e implementação de IA.",
       highlight: "Planejamento"
     },
     {
       category: "Consultoria Estratégica",
       icon: <TrendingUp className="h-12 w-12 text-primary" />,
-      title: "Análise de ROI",
-      description: "Cálculo preciso do retorno sobre investimento, projeções de economia e impacto financeiro das soluções de IA.",
-      highlight: "ROI"
-    },
-    {
-      category: "Implementação",
-      icon: <Cog className="h-12 w-12 text-primary" />,
-      title: "Ferramentas próprias e sob medida",
-      description: "Desenvolvimento de soluções customizadas que se adaptam perfeitamente aos processos únicos da sua empresa.",
-      highlight: "Customização"
+      title: "Relatórios Inteligentes",
+      description: "Análises detalhadas das suas ferramentas de IA, com métricas e insights que orientam decisões estratégicas.",
+      highlight: "Inteligência em cada dado"      
     },
     {
       category: "Implementação",
@@ -52,10 +45,17 @@ export function ProblemSolutionSection() {
       highlight: "Integração"
     },
     {
+      category: "Implementação",
+      icon: <Cog className="h-12 w-12 text-primary" />,
+      title: "Criação de Ferramentas próprias",
+      description: "Desenvolvimento de soluções customizadas que se adaptam perfeitamente aos processos únicos da sua empresa.",
+      highlight: "Customização"
+    },
+    {
       category: "Implementação", 
       icon: <Zap className="h-12 w-12 text-primary" />,
-      title: "Landing pages inteligentes",
-      description: "Páginas com disparo automatizado e personalização baseada em IA para maximizar conversões e engajamento.",
+      title: "Automações de processos",
+      description: "Automação de processos com IA, para maximizar a produtividade e a eficiência dos seus colaboradores.",
       highlight: "Automação"
     },
     {
@@ -114,7 +114,7 @@ export function ProblemSolutionSection() {
   };
 
   return (
-    <section id="pillars" className="py-10 bg-background relative">
+    <section id="solution" className="py-10 bg-background relative">
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.2]" />
       
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">

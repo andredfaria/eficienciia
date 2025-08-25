@@ -16,6 +16,22 @@
     "error": true
   },
   {
+    "page": "/#services",
+    "score": 0,
+    "issues": [
+      "Protocol \"http:\" not supported. Expected \"https:\""
+    ],
+    "error": true
+  },
+  {
+    "page": "/#methodology",
+    "score": 0,
+    "issues": [
+      "Protocol \"http:\" not supported. Expected \"https:\""
+    ],
+    "error": true
+  },
+  {
     "page": "/#contact",
     "score": 0,
     "issues": [
