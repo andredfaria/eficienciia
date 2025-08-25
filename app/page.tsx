@@ -1,10 +1,12 @@
 import { Metadata } from 'next'
 import { HeroSection } from '@/components/sections/hero-section';
+import { MethodologySection } from '@/components/sections/methodology-section';
 import { ProblemSolutionSection } from '@/components/sections/problem-solution-section';
 import { ContactSection } from '@/components/sections/contact-section';
 import { Footer } from '@/components/sections/footer';
 import { Header } from '@/components/header';
 import { OrganizationStructuredData } from '@/components/seo/StructuredData'
+import { ServicesSection } from '@/components/sections/services-section';
 
 export const metadata: Metadata = {
   title: 'Eficienci IA | Automatize seu negócio com IA',
@@ -78,6 +80,8 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.35]" />
       <Header />
       <HeroSection />
+      <ServicesSection />
+      <MethodologySection />
       <ProblemSolutionSection />
       <ContactSection />
       <Footer />

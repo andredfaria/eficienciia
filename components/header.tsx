@@ -41,13 +41,13 @@ export function Header() {
           transition={{ delay: 0.2 }}
         >
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-            <img
+            {/* <img
               src="/logo.png"
               alt="Eficienci IA Logo"
               width={40}
               height={40}
               className="h-10 w-auto"
-            />
+            /> */}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Eficienci IA
             </span>
@@ -107,6 +107,7 @@ export function Header() {
 
 function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () => void }) {
   const navItems = [
+    { href: "#pillars", label: "Pilares" },
     { href: "#solution", label: "Serviços" },
     { href: "#contact", label: "Contato" },
   ];

@@ -2,72 +2,82 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { AudioLines, Calendar, ChartColumnBig, Database, DollarSign, Globe, Mail, MessageCircle, ServerIcon } from "lucide-react";
+import {
+  Bot,
+  Cog,
+  FileBarChart,
+  MessageSquare,
+  Smartphone,
+  Target,
+  TrendingUp,
+  FolderCode,
+  Zap
+} from "lucide-react";
 
 export function ProblemSolutionSection() {
-  const solutions = [
+  const pillars = [
     {
-      category: "Whatsapp",
-      icon: <MessageCircle className="h-12 w-12 text-primary" />,
-      title: "Atendimento automático",
-      description:
-        "Atenda automaticamente, 24/7, reduzindo custos e escalando sem limites. Responde dúvidas, consulta dados e encaminha solicitações.",
+      category: "Consultoria Estratégica",
+      icon: <Target className="h-12 w-12 text-primary" />,
+      title: "Diagnóstico completo da empresa",
+      description: "Análise detalhada de onde a IA pode gerar mais impacto no seu negócio, identificando oportunidades de automação e otimização.",
+      highlight: "Estratégia"
     },
     {
-      category: "Whatsapp",
-      icon: <Calendar className="h-12 w-12 text-primary" />,
-      title: "Agendamento automático",
-      description:
-        "Agenda e confirma consultas, remarcações e exames. Sincroniza horários com o seu calendário e sistemas em tempo real.",
+      category: "Consultoria Estratégica", 
+      icon: <FileBarChart className="h-12 w-12 text-primary" />,
+      title: "Relatório detalhado com roadmap",
+      description: "Documento completo com plano de implementação estruturado, cronograma e marcos para transformação digital.",
+      highlight: "Planejamento"
     },
     {
-      category: "Whatsapp",
-      icon: <DollarSign className="h-12 w-12 text-primary" />,
-      title: "Remarketing automático",
-      description:
-        "Recupere carrinhos e reengaje leads com jornadas multicanal baseadas em eventos, segmentos e janelas de tempo.",
+      category: "Consultoria Estratégica",
+      icon: <TrendingUp className="h-12 w-12 text-primary" />,
+      title: "Análise de ROI",
+      description: "Cálculo preciso do retorno sobre investimento, projeções de economia e impacto financeiro das soluções de IA.",
+      highlight: "ROI"
     },
     {
-      category: "Automação",
-      icon: <ServerIcon className="h-12 w-12 text-primary" />,
-      title: "Integração entre CRM e ERP",
-      description:
-        "Conecte CRM/ERP para ler e atualizar contatos, negócios, pedidos e tickets, mantendo os dados sempre consistentes.",
+      category: "Implementação",
+      icon: <Cog className="h-12 w-12 text-primary" />,
+      title: "Ferramentas próprias e sob medida",
+      description: "Desenvolvimento de soluções customizadas que se adaptam perfeitamente aos processos únicos da sua empresa.",
+      highlight: "Customização"
     },
     {
-        category: "Automação",
-      icon: <AudioLines className="h-12 w-12 text-primary" />,
-      title: "Áudio automático (envio e recepção)",
-      description:
-        "Envie e transcreva áudios automaticamente. Suporte a TTS e STT com múltiplas vozes e idiomas.",
+      category: "Implementação",
+      icon: <Smartphone className="h-12 w-12 text-primary" />,
+      title: "Integração multi-plataforma",
+      description: "Conexão com WhatsApp, CRM, redes sociais e sistemas internos para automação completa dos fluxos de trabalho.",
+      highlight: "Integração"
     },
     {
-      category: "Automação",
-      icon: <Mail className="h-12 w-12 text-primary" />,
-      title: "E-mails automatizados",
-      description:
-        "Crie fluxos transacionais e de marketing com templates, variáveis dinâmicas e testes A/B para maximizar conversão.",
+      category: "Implementação", 
+      icon: <Zap className="h-12 w-12 text-primary" />,
+      title: "Landing pages inteligentes",
+      description: "Páginas com disparo automatizado e personalização baseada em IA para maximizar conversões e engajamento.",
+      highlight: "Automação"
     },
     {
-      category: "Dados",
-      icon: <Globe className="h-12 w-12 text-primary" />,
-      title: "Estruturação e organização de bases",
-      description:
-        "Normalize, higienize e enriqueça bases de dados para relatórios confiáveis e modelos de IA mais precisos.",
+      category: "Plug & Play",
+      icon: <Bot className="h-12 w-12 text-primary" />,
+      title: "Bots de atendimento via WhatsApp",
+      description: "Solução pronta para atendimento automático 24/7, com respostas inteligentes e escalabilidade imediata.",
+      highlight: "Pronto"
     },
     {
-      category: "Dados",
-      icon: <Database className="h-12 w-12 text-primary" />,
-      title: "Coleta de dados em conversa",
-      description:
-        "Capta dados consentidos durante a conversa (nome, preferências, objetivos) para personalizar jornadas e próximas interações.",
+      category: "Plug & Play",
+      icon: <MessageSquare className="h-12 w-12 text-primary" />,
+      title: "Disparo inteligente em massa",
+      description: "Sistema automatizado para envio de mensagens personalizadas com IA, segmentação avançada e timing otimizado.",
+      highlight: "Inteligente"
     },
     {
-      category: "Dados",
-      icon: <ChartColumnBig className="h-12 w-12 text-primary" />,
-      title: "Dashboard de performance",
-      description:
-        "Visualize métricas de atendimento, conversão e eficiência para tomar decisões estratégicas.",
+      category: "Plug & Play",
+      icon: <FolderCode className="h-12 w-12 text-primary" />,
+      title: "Ferramentas de atendimento",
+      description: "Ferramentas de atendimento para whatsapp, e-mail e CRM, tudo integrado e facil de controle e gestão.",
+      highlight: "Leads"
     },
   ];
 
@@ -90,9 +100,23 @@ export function ProblemSolutionSection() {
     }
   };
 
+  const getCategoryColor = (category: string) => {
+    switch(category) {
+      case "Consultoria Estratégica":
+        return "bg-blue-500/10 text-blue-600 border-blue-200";
+      case "Implementação":
+        return "bg-green-500/10 text-green-600 border-green-200";
+      case "Plug & Play":
+        return "bg-purple-500/10 text-purple-600 border-purple-200";
+      default:
+        return "bg-gray-500/10 text-gray-600 border-gray-200";
+    }
+  };
+
   return (
-    <section id="solution" className="py-20 bg-background relative">
+    <section id="pillars" className="py-10 bg-background relative">
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.2]" />
+      
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -101,9 +125,11 @@ export function ProblemSolutionSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-14 max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Soluções de IA e Automação</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+            Produtos e <span className="text-primary">Soluções</span>
+          </h2>
           <p className="text-muted-foreground text-base md:text-lg">
-            Agentes de IA, automação no WhatsApp e integrações entre CRM/ERP para atendimento 24/7, eficiência operacional e crescimento previsível.
+            Nossa abordagem estruturada garante resultados efetivos: desde a consultoria estratégica até soluções prontas para usar.
           </p>
         </motion.div>
 
@@ -113,25 +139,28 @@ export function ProblemSolutionSection() {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
-            {solutions.map((solution, index) => (
-              <motion.div key={solution.title} variants={itemVariants}>
+            {pillars.map((pillar, index) => (
+              <motion.div key={pillar.title} variants={itemVariants}>
                 <Card className="group h-full rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all hover:neon-ring min-h-[320px] md:min-h-[340px]">
-                  <CardHeader className="pb-1">
-                    <div className="mb-3">
-                      <span className="inline-flex items-center rounded-full border border-border/60 bg-background/60 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                        {solution.category}
+                  <CardHeader className="pb-3">
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${getCategoryColor(pillar.category)}`}>
+                        {pillar.category}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-xs font-medium text-primary">
+                        {pillar.highlight}
                       </span>
                     </div>
-                    <div className="mb-5 inline-flex items-center justify-center rounded-xl bg-primary/10 p-4 text-primary neon-ring">
-                      {solution.icon}
+                    <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-4 text-primary neon-ring">
+                      {pillar.icon}
                     </div>
-                    <CardTitle className="text-2xl tracking-tight">{solution.title}</CardTitle>
+                    <CardTitle className="text-lg tracking-tight leading-tight">{pillar.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                      {solution.description}
+                    <CardDescription className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      {pillar.description}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -142,4 +171,4 @@ export function ProblemSolutionSection() {
       </div>
     </section>
   );
-}
+} 
