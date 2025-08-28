@@ -35,7 +35,7 @@ export function ProblemSolutionSection() {
       icon: <TrendingUp className="h-12 w-12 text-primary" />,
       title: "Relatórios Inteligentes",
       description: "Análises detalhadas das suas ferramentas de IA, com métricas e insights que orientam decisões estratégicas.",
-      highlight: "Inteligência em cada dado"      
+      highlight: "Dados"
     },
     {
       category: "Implementação",
@@ -63,14 +63,14 @@ export function ProblemSolutionSection() {
       icon: <Bot className="h-12 w-12 text-primary" />,
       title: "Bots de atendimento via WhatsApp",
       description: "Solução pronta para atendimento automático 24/7, com respostas inteligentes e escalabilidade imediata.",
-      highlight: "Pronto"
+      highlight: "Bots de atendimento"
     },
     {
       category: "Plug & Play",
       icon: <MessageSquare className="h-12 w-12 text-primary" />,
       title: "Disparo inteligente em massa",
       description: "Sistema automatizado para envio de mensagens personalizadas com IA, segmentação avançada e timing otimizado.",
-      highlight: "Inteligente"
+      highlight: "Disparo em massa"
     },
     {
       category: "Plug & Play",
