@@ -19,7 +19,7 @@ export function ContactSection() {
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name"),
-      email: formData.get("email"),
+      telefone: formData.get("telefone"),
       objetivos: formData.get("objetivos"),
       desafio: formData.get("desafio"),
       site: formData.get("site"),
@@ -98,11 +98,12 @@ export function ContactSection() {
               </div>
 
               <div>
-                <label className="text-sm font-medium">Email</label>
+                <label className="text-sm font-medium">Telefone</label>
                 <Input 
-                  placeholder="seu@email.com" 
+                  placeholder="(11) 99999-9999" 
                   className="h-9 mt-1"
-                  name="email"
+                  name="telefone"
+                  type="tel"
                 />
               </div>
             </div>
