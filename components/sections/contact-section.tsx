@@ -4,9 +4,48 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
+import { useState, FormEvent } from "react";
 
 
 export function ContactSection() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      objetivos: formData.get("objetivos"),
+      desafio: formData.get("desafio"),
+      site: formData.get("site"),
+    };
+
+    try {
+      const response = await fetch("https://webhook.lp-youconprojetos.com.br/webhook/salva-formulario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setMessage("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setMessage("Erro ao enviar mensagem. Tente novamente.");
+      }
+    } catch (error) {
+      setMessage("Erro ao enviar mensagem. Verifique sua conexão e tente novamente.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-12 bg-background relative">
@@ -35,14 +74,18 @@ export function ContactSection() {
           className="max-w-2xl mx-auto bg-card/80 backdrop-blur-md rounded-lg shadow-lg border border-border p-4 md:p-6 neon-ring"
         >
           <form 
-            action="https://formsubmit.co/adfariacarvalho@gmail.com" 
-            method="POST"
+            onSubmit={handleSubmit}
             className="space-y-4"
           >
-            <input type="hidden" name="_subject" value="Nova solicitação de projeto - Eficienciia" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ''} />
+            {message && (
+              <div className={`p-3 rounded-lg text-sm ${
+                message.includes("sucesso") 
+                  ? "bg-green-500/10 text-green-500 border border-green-500/20" 
+                  : "bg-red-500/10 text-red-500 border border-red-500/20"
+              }`}>
+                {message}
+              </div>
+            )}
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -91,8 +134,8 @@ export function ContactSection() {
               />
             </div>
 
-            <Button type="submit" className="w-full h-9">
-              Enviar
+            <Button type="submit" className="w-full h-9" disabled={isLoading}>
+              {isLoading ? "Enviando..." : "Enviar"}
             </Button>
           </form>
         </motion.div>
