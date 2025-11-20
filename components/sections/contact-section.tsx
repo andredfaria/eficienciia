@@ -26,7 +26,7 @@ export function ContactSection() {
     };
 
     try {
-      const response = await fetch("https://webhook.lp-youconprojetos.com.br/webhook/salva-formulario", {
+      const response = await fetch("https://n8n.eficienciia.com.br/webhook/salva-formulario", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
