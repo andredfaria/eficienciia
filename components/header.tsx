@@ -120,23 +120,27 @@ export function Header() {
 
 function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () => void }) {
   const navItems = [
-    { href: "#services", label: "Serviços" },
-    { href: "#methodology", label: "Metodologia" },
-    { href: "#solution", label: "Soluções" },
-    { href: "#contact", label: "Contato" },
+    { href: "#services", label: "Serviços", isHash: true },
+    { href: "#methodology", label: "Metodologia", isHash: true },
+    { href: "#solution", label: "Soluções", isHash: true },
+    { href: "/blog", label: "Blog", isHash: false },
+    { href: "#contact", label: "Contato", isHash: true },
   ];
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 80; // altura aproximada do header
-      const elementPosition = element.offsetTop - headerHeight;
-      
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, item: typeof navItems[0]) => {
+    if (item.isHash) {
+      e.preventDefault();
+      const sectionId = item.href.replace('#', '');
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerHeight = 80; // altura aproximada do header
+        const elementPosition = element.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
     }
     if (onClick) onClick();
   };
@@ -144,20 +148,36 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
   return (
     <>
       {navItems.map((item, index) => (
-        <motion.a
+        <motion.div
           key={item.href}
-          href={item.href}
-          className={cn(
-            "text-foreground/80 hover:text-primary transition-colors cursor-pointer",
-            mobile && "block py-2 text-lg"
-          )}
-          onClick={(e) => handleClick(e, item.href.replace('#', ''))}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 * index }}
         >
-          {item.label}
-        </motion.a>
+          {item.isHash ? (
+            <a
+              href={item.href}
+              className={cn(
+                "text-foreground/80 hover:text-primary transition-colors cursor-pointer",
+                mobile && "block py-2 text-lg"
+              )}
+              onClick={(e) => handleClick(e, item)}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <Link
+              href={item.href}
+              className={cn(
+                "text-foreground/80 hover:text-primary transition-colors cursor-pointer",
+                mobile && "block py-2 text-lg"
+              )}
+              onClick={onClick}
+            >
+              {item.label}
+            </Link>
+          )}
+        </motion.div>
       ))}
     </>
   );
