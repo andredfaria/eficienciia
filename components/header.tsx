@@ -26,7 +26,7 @@ export function Header() {
     if (element) {
       const headerHeight = 80; // altura aproximada do header
       const elementPosition = element.offsetTop - headerHeight;
-      
+
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
@@ -70,10 +70,10 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLinks />
-          <Button 
-            size="sm" 
+          <Button
+            size="sm"
             className="rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
-            onClick={() => scrollToSection('contact')}
+            onClick={() => window.open('https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO', '_blank')}
           >
             Fale com Especialistas
             <ChevronRightIcon className="ml-1 h-4 w-4" />
@@ -101,9 +101,9 @@ export function Header() {
         >
           <div className="container mx-auto px-4 py-6 flex flex-col space-y-4">
             <NavLinks mobile onClick={() => setIsMenuOpen(false)} />
-            <Button 
+            <Button
               onClick={() => {
-                scrollToSection('contact');
+                window.open('https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO', '_blank');
                 setIsMenuOpen(false);
               }}
               className="w-full rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
@@ -135,7 +135,7 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
       if (element) {
         const headerHeight = 80; // altura aproximada do header
         const elementPosition = element.offsetTop - headerHeight;
-        
+
         window.scrollTo({
           top: elementPosition,
           behavior: 'smooth'

@@ -66,7 +66,7 @@ export function HeroSection() {
                   </motion.span>
                 </AnimatePresence>
               </span>
-              <br/> seu negócio com IA
+              <br /> seu negócio com IA
             </motion.h1>
 
             <motion.p
@@ -87,9 +87,7 @@ export function HeroSection() {
                 size="lg"
                 className="rounded-full text-lg group hover:shadow-[0_0_0_1px_hsl(var(--primary)/.45),0_0_20px_hsl(var(--primary)/.35),0_0_40px_hsl(var(--primary)/.25)]"
                 onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
+                  window.open('https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO', '_blank')
                 }
               >
                 Automatize com IA
