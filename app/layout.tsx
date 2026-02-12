@@ -123,6 +123,12 @@ export default function RootLayout({
             })
           }}
         />
+        <Script
+          async
+          src="https://testes-ackee.jqd7au.easypanel.host/tracker.js"
+          data-ackee-server="https://testes-ackee.jqd7au.easypanel.host"
+          data-ackee-domain-id="b53929ad-51e8-44d2-afd6-9f890751f49f"
+        />
       </body>
     </html>
   );
