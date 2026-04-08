@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Phone, HardHat, ShoppingCart, Home, CheckCircle, TrendingUp } from "lucide-react";
@@ -9,7 +10,7 @@ import { Phone, HardHat, ShoppingCart, Home, CheckCircle, TrendingUp } from "luc
 interface Sector {
   id: string;
   label: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   description: string;
   applications: string[];
   results: string[];
@@ -92,7 +93,7 @@ const sectors: Sector[] = [
 
 export function SectorsSection() {
   const [activeId, setActiveId] = useState<string>(sectors[0].id);
-  const activeSector = sectors.find((s) => s.id === activeId)!;
+  const activeSector = sectors.find((s) => s.id === activeId) ?? sectors[0];
 
   return (
     <section id="sectors" className="py-10 bg-background relative">
@@ -122,11 +123,17 @@ export function SectorsSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-3 mb-10"
+          role="tablist"
+          aria-label="Setores de atuação"
         >
           {sectors.map((sector) => (
             <button
               key={sector.id}
               onClick={() => setActiveId(sector.id)}
+              role="tab"
+              aria-selected={activeId === sector.id}
+              aria-controls={`panel-${sector.id}`}
+              id={`tab-${sector.id}`}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border text-sm font-medium transition-all duration-200 ${
                 activeId === sector.id
                   ? "bg-primary/10 border-primary text-primary shadow-[0_0_12px_hsl(var(--primary)/.2)]"
@@ -140,11 +147,15 @@ export function SectorsSection() {
         </motion.div>
 
         {/* Tab content */}
+        {/* animate (not whileInView) so it re-triggers on every tab change */}
         <motion.div
           key={activeId}
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
+          role="tabpanel"
+          id={`panel-${activeId}`}
+          aria-labelledby={`tab-${activeId}`}
           className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm p-6 md:p-8"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
