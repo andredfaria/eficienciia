@@ -19,65 +19,65 @@ export function ProblemSolutionSection() {
     {
       category: "Consultoria Estratégica",
       icon: <Target className="h-12 w-12 text-primary" />,
-      title: "Diagnóstico completo da empresa",
-      description: "Análise detalhada de onde a IA pode gerar mais impacto no seu negócio, identificando oportunidades de automação e otimização.",
+      title: "Diagnóstico completo do negócio",
+      description: "Saiba exatamente onde a IA vai gerar retorno antes de investir um centavo. Mapeamos processos, gargalos e oportunidades com profundidade técnica.",
       highlight: "Estratégia"
     },
     {
-      category: "Consultoria Estratégica", 
+      category: "Consultoria Estratégica",
       icon: <FileBarChart className="h-12 w-12 text-primary" />,
-      title: "Roadmap de implementação",
-      description: "Plano de implementação estruturado, com tempos de entrega, valor e cronograma para transformação digital e implementação de IA.",
+      title: "Roadmap priorizado por impacto",
+      description: "Receba um plano de ação claro: o que implementar primeiro, quanto custa, quanto retorna e em qual prazo. Sem surpresas no caminho.",
       highlight: "Planejamento"
     },
     {
       category: "Consultoria Estratégica",
       icon: <TrendingUp className="h-12 w-12 text-primary" />,
-      title: "Relatórios Inteligentes",
-      description: "Análises detalhadas das suas ferramentas de IA, com métricas e insights que orientam decisões estratégicas.",
+      title: "Relatórios e métricas de IA",
+      description: "Acompanhe o desempenho de cada automação com dashboards e relatórios que mostram ROI real — não só atividade, mas resultado.",
       highlight: "Dados"
     },
     {
       category: "Implementação",
       icon: <Smartphone className="h-12 w-12 text-primary" />,
       title: "Integração multi-plataforma",
-      description: "Conexão com WhatsApp, CRM, redes sociais e sistemas internos para automação completa dos fluxos de trabalho.",
+      description: "Conecte WhatsApp, CRM, ERP e sistemas internos em um fluxo único e automatizado. Sua equipe para de copiar dados entre telas.",
       highlight: "Integração"
     },
     {
       category: "Implementação",
       icon: <Cog className="h-12 w-12 text-primary" />,
-      title: "Criação de Ferramentas próprias",
-      description: "Desenvolvimento de soluções customizadas que se adaptam perfeitamente aos processos únicos da sua empresa.",
+      title: "Ferramentas de IA sob medida",
+      description: "Construímos exatamente o que o seu processo precisa — sem forçar sua operação a se adaptar a uma ferramenta genérica.",
       highlight: "Customização"
     },
     {
-      category: "Implementação", 
+      category: "Implementação",
       icon: <Zap className="h-12 w-12 text-primary" />,
-      title: "Automações de processos",
-      description: "Automação de processos com IA, para maximizar a produtividade e a eficiência dos seus colaboradores.",
+      title: "Automação de processos repetitivos",
+      description: "Elimine tarefas manuais que consomem tempo do seu time. Cada processo automatizado libera capacidade para o que gera mais valor.",
       highlight: "Automação"
     },
     {
       category: "Plug & Play",
       icon: <Bot className="h-12 w-12 text-primary" />,
-      title: "Bots de atendimento via WhatsApp",
-      description: "Solução pronta para atendimento automático 24/7, com respostas inteligentes e escalabilidade imediata.",
+      title: "Atendimento automático via WhatsApp",
+      description: "Ative um agente de IA que responde, qualifica e escalona chamados 24/7 — sem contratar mais atendentes.",
       highlight: "Bots de atendimento"
     },
     {
       category: "Plug & Play",
       icon: <MessageSquare className="h-12 w-12 text-primary" />,
-      title: "Disparo inteligente em massa",
-      description: "Sistema automatizado para envio de mensagens personalizadas com IA, segmentação avançada e timing otimizado.",
-      highlight: "Disparo em massa"
+      title: "Remarketing automático inteligente",
+      description: "Recupere vendas perdidas com mensagens personalizadas enviadas na hora certa para o perfil certo. IA decide o timing e o conteúdo.",
+      highlight: "Remarketing"
     },
     {
       category: "Plug & Play",
       icon: <FolderCode className="h-12 w-12 text-primary" />,
-      title: "Ferramentas de atendimento",
-      description: "Ferramentas de atendimento para whatsapp, e-mail e CRM, tudo integrado e facil de controle e gestão.",
-      highlight: "Leads"
+      title: "Central de atendimento integrada",
+      description: "WhatsApp, e-mail e CRM em um só lugar, com histórico unificado e respostas assistidas por IA. Gestão simples, atendimento consistente.",
+      highlight: "Gestão"
     },
   ];
 
@@ -126,10 +126,10 @@ export function ProblemSolutionSection() {
           className="mb-14 max-w-3xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-            Produtos e <span className="text-primary">Soluções</span>
+            O que entregamos <span className="text-primary">na prática</span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg">
-            Nossa abordagem estruturada garante resultados efetivos: desde a consultoria estratégica até soluções prontas para usar.
+            Cada solução foi construída a partir de problemas reais que nossos clientes enfrentavam.
           </p>
         </motion.div>
 
