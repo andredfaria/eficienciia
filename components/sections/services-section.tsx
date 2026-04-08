@@ -30,10 +30,10 @@ export function ServicesSection() {
           className="mb-16 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-            Conheça nossos <span className="text-primary">Serviços</span>
+            Como a Eficienci IA <span className="text-primary">trabalha</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
-            Uma abordagem completa que combina estratégia, execução e soluções imediatas para transformar seu negócio com IA.
+            Da estratégia ao produto — escolha o ponto de entrada que faz mais sentido para o momento da sua empresa.
           </p>
         </motion.div>
 
@@ -67,7 +67,7 @@ export function ServicesSection() {
                   Consultoria Estratégica de IA
                 </CardTitle>
                 <CardDescription className="text-blue-700 dark:text-blue-300 text-base leading-relaxed">
-                  Planejamento e diagnóstico completo baseado no cenario atual da sua empresa, roadmap detalhado e análise precisa de ROI para maximizar o impacto da IA no seu negócio.
+                  Mapeamos seu negócio, identificamos onde a IA gera mais impacto e entregamos um roadmap executável com ROI projetado — antes de você investir um real na implementação.
                 </CardDescription>
               </CardHeader>
               
@@ -75,15 +75,15 @@ export function ServicesSection() {
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-blue-600 dark:text-blue-400">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                    Diagnóstico da empresa 
+                    Diagnóstico completo do negócio
                   </div>
                   <div className="flex items-center text-sm text-blue-600 dark:text-blue-400">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                    Roadmap de implementação
+                    Roadmap priorizado por impacto
                   </div>
                   <div className="flex items-center text-sm text-blue-600 dark:text-blue-400">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                    Análise de ROI
+                    Projeção de ROI por iniciativa
                   </div>
                 </div>
               </CardContent>
@@ -112,7 +112,7 @@ export function ServicesSection() {
                   Implementação e Automação
                 </CardTitle>
                 <CardDescription className="text-green-700 dark:text-green-300 text-base leading-relaxed">
-                  Desenvolvimento de soluções de software ou automação customizadas com integração com whatsapp, CRM ou sitema interno da sua empresa.
+                  Desenvolvemos e integramos soluções de IA sob medida nos seus fluxos — WhatsApp, CRM, ERP ou sistema interno. Cada automação é construída para escalar sem aumentar sua equipe.
                 </CardDescription>
               </CardHeader>
               
@@ -120,15 +120,15 @@ export function ServicesSection() {
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-green-600 dark:text-green-400">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    Ferramentas sob medida
+                    Ferramentas de IA sob medida
                   </div>
                   <div className="flex items-center text-sm text-green-600 dark:text-green-400">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    Integração multi-plataforma
+                    Integração com WhatsApp, CRM e ERP
                   </div>
                   <div className="flex items-center text-sm text-green-600 dark:text-green-400">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                    Automação de processos
+                    Automações que escalam sem equipe
                   </div>
                 </div>
               </CardContent>
@@ -154,10 +154,10 @@ export function ServicesSection() {
                   <Zap className="h-12 w-12" />
                 </div>
                 <CardTitle className="text-xl font-bold text-purple-900 dark:text-purple-100 mb-3">
-                  Produtos Plug & Play
+                  Soluções Prontas para Usar
                 </CardTitle>
                 <CardDescription className="text-purple-700 dark:text-purple-300 text-base leading-relaxed">
-                  Soluções prontas para implementação imediata: Sistema de mensageria, bots de atendimento, automação de marketing, instalação de ferramentas no-code, etc.
+                  Para quem precisa de resultado rápido: bots de atendimento 24/7, automação de marketing e ferramentas no-code prontas para ativar em dias, não meses.
                 </CardDescription>
               </CardHeader>
               
@@ -165,15 +165,15 @@ export function ServicesSection() {
                 <div className="space-y-2">
                   <div className="flex items-center text-sm text-purple-600 dark:text-purple-400">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                    Bots de atendimento automático
+                    Atendimento automático 24/7
                   </div>
                   <div className="flex items-center text-sm text-purple-600 dark:text-purple-400">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                    Automação de marketing
+                    Automação de marketing e remarketing
                   </div>
                   <div className="flex items-center text-sm text-purple-600 dark:text-purple-400">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                    Ferramentas no-code
+                    Ativação em dias, não meses
                   </div>
                 </div>
               </CardContent>
