@@ -17,28 +17,28 @@ export function MethodologySection() {
       step: "1",
       title: "Escutar",
       icon: <Ear className="h-8 w-8 text-primary" />,
-      description: "Entendemos profundamente seu cenário atual, desafios e objetivos de negócio para identificar onde a IA pode gerar mais impacto.",
+      description: "Mergulhamos no seu negócio: processos, gargalos, oportunidades. Só avançamos quando entendemos onde a IA vai gerar impacto real.",
       color: "bg-blue-500/10 text-blue-600 border-blue-200"
     },
     {
       step: "2", 
       title: "Explorar",
       icon: <Search className="h-8 w-8 text-primary" />,
-      description: "Analisamos e testamos as melhores soluções de IA para seu caso específico, criando um roadmap personalizado de implementação.",
+      description: "Testamos, validamos e desenhamos o roadmap certo para o seu contexto — sem vender ferramenta por vender.",
       color: "bg-green-500/10 text-green-600 border-green-200"
     },
     {
       step: "3",
       title: "Executar", 
       icon: <Play className="h-8 w-8 text-primary" />,
-      description: "Implementamos as soluções de forma prática e eficiente, integrando IA aos seus processos existentes de forma suave.",
+      description: "Implementação técnica com integração nos seus sistemas. Sem downtime, sem retrabalho, com entregas incrementais.",
       color: "bg-purple-500/10 text-purple-600 border-purple-200"
     },
     {
       step: "4",
       title: "Evoluir",
       icon: <TrendingUp className="h-8 w-8 text-primary" />,
-      description: "Monitoramos resultados, otimizamos performance e implementamos melhorias contínuas para evolução constante do seu negócio.",
+      description: "Medimos cada resultado, ajustamos o que não performa e escalamos o que funciona. Você não fica sozinho depois da entrega.",
       color: "bg-orange-500/10 text-orange-600 border-orange-200"
     }
   ];
@@ -77,13 +77,8 @@ export function MethodologySection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
             O <span className="text-primary">Ciclo 4E</span> da EficienciIA
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-8">
-            Na EficienciIA, acreditamos que a adoção de Inteligência Artificial precisa ser simples e estratégica. 
-            Por isso, criamos o <strong>Ciclo 4E</strong>: uma metodologia própria que vai do diagnóstico à evolução contínua.
-          </p>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Nós escutamos seu cenário, exploramos as melhores soluções, executamos a implementação prática e evoluímos seu negócio com melhorias constantes. 
-            Assim, você não só adota IA – você cria um <strong>ciclo de eficiência real e sustentável</strong>.
+          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+            Toda transformação com IA começa com o diagnóstico certo. O <strong>Ciclo 4E</strong> é nossa metodologia para garantir que cada etapa gere valor antes de avançar para a próxima.
           </p>
         </motion.div>
 
