@@ -1,3 +1,38 @@
+# Hero Dynamic Phrase Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Tornar a parte em destaque do H1 no HeroSection dinâmica, rotacionando 7 frases com animação slide + fade usando framer-motion.
+
+**Architecture:** Adicionar `useState` + `useEffect` com intervalo de 3500ms ao componente `HeroSection` existente. O `<span>` estático da frase é substituído por um `AnimatePresence` + `motion.span` com `key={currentIndex}` para triggar animação a cada troca. Remover o travessão (`—`) do texto fixo do H1.
+
+**Tech Stack:** React (useState, useEffect), framer-motion (AnimatePresence, motion), Next.js App Router
+
+---
+
+### Task 1: Implementar frase dinâmica no HeroSection
+
+**Files:**
+- Modify: `components/sections/hero-section.tsx`
+
+- [ ] **Step 1: Verificar o arquivo atual**
+
+Abrir `components/sections/hero-section.tsx` e confirmar que a linha 41 contém:
+```tsx
+Da estratégia à execução —{" "}
+```
+e a linha 42-44:
+```tsx
+<span className="text-primary neon-text">
+  IA que gera resultado real
+</span>
+```
+
+- [ ] **Step 2: Substituir o conteúdo completo do arquivo**
+
+Substituir `components/sections/hero-section.tsx` pelo conteúdo abaixo:
+
+```tsx
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -181,3 +216,22 @@ export function HeroSection() {
     </section>
   );
 }
+```
+
+- [ ] **Step 3: Verificar que o servidor dev compila sem erros**
+
+```bash
+bun dev
+```
+
+Abrir `http://localhost:3000` e confirmar:
+- H1 exibe "Da estratégia à execução IA que gera resultado real" (sem travessão)
+- A cada ~3.5s a frase muda com animação slide + fade
+- Sem erros no console do browser
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add components/sections/hero-section.tsx docs/superpowers/specs/2026-04-14-hero-dynamic-phrase-design.md docs/superpowers/plans/2026-04-14-hero-dynamic-phrase.md
+git commit -m "feat: add dynamic rotating phrase animation to HeroSection"
+```
