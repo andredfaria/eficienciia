@@ -134,7 +134,9 @@ export function generateSlug(title: string): string {
     .replace(/[^\w\s-]/g, '') // Remove caracteres especiais
     .replace(/\s+/g, '-') // Substitui espaços por hífens
     .replace(/-+/g, '-') // Remove hífens duplicados
-    .trim();
+    .trim()
+    .slice(0, 200)
+    .replace(/-$/, '');
 }
 
 /**
