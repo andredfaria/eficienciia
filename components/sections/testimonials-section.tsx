@@ -70,7 +70,7 @@ export function TestimonialsSection() {
     setActiveIndex((i) => (i + 1) % testimonials.length);
 
   const active = testimonials[activeIndex];
-
+  if (true) return null;
   return (
     <section id="testimonials" className="py-10 bg-background relative">
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.15]" />
