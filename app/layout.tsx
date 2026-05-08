@@ -105,7 +105,10 @@ export default function RootLayout({
               name: 'Eficienci IA',
               url: siteUrl,
               logo: `${siteUrl}/logo.png`,
-              sameAs: ['https://linkedin.com']
+              sameAs: [
+                'https://www.linkedin.com/in/andre-de-faria/',
+                'https://www.instagram.com/eficienci.ia/'
+              ]
             })
           }}
         />
