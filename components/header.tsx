@@ -82,7 +82,7 @@ export function Header() {
 
         {/* Mobile Navigation Toggle */}
         <button
-          className="md:hidden text-primary focus:outline-none"
+          className="md:hidden text-primary focus:outline-none p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
         >
@@ -99,14 +99,14 @@ export function Header() {
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="container mx-auto px-4 py-6 flex flex-col space-y-4">
+          <div className="container mx-auto px-4 py-5 flex flex-col space-y-3">
             <NavLinks mobile onClick={() => setIsMenuOpen(false)} />
             <Button
               onClick={() => {
                 window.open('https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO', '_blank');
                 setIsMenuOpen(false);
               }}
-              className="w-full rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
+              className="w-full rounded-full min-h-[48px] hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
             >
               Fale com Especialistas
               <ChevronRightIcon className="ml-1 h-4 w-4" />
@@ -159,7 +159,7 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
               href={item.href}
               className={cn(
                 "text-foreground/80 hover:text-primary transition-colors cursor-pointer",
-                mobile && "block py-2 text-lg"
+                mobile && "block py-3 text-base min-h-[48px] flex items-center"
               )}
               onClick={(e) => handleClick(e, item)}
             >
@@ -170,7 +170,7 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
               href={item.href}
               className={cn(
                 "text-foreground/80 hover:text-primary transition-colors cursor-pointer",
-                mobile && "block py-2 text-lg"
+                mobile && "block py-3 text-base min-h-[48px] flex items-center"
               )}
               onClick={onClick}
             >

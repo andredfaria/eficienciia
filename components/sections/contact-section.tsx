@@ -48,7 +48,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-12 bg-background relative">
+    <section id="contact" className="py-12 md:py-12 bg-background relative">
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.16]" />
       <div className="container mx-auto px-4">
         <motion.div
@@ -56,12 +56,12 @@ export function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-8"
+          className="text-center mb-6 md:mb-8"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">
             Fale com Especialistas em IA
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Conte-nos sobre sua necessidade. Desenhamos soluções de IA personalizadas com foco em performance, ROI e escalabilidade.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export function ContactSection() {
         >
           <form 
             onSubmit={handleSubmit}
-            className="space-y-4"
+            className="space-y-3 md:space-y-4"
           >
             {message && (
               <div className={`p-3 rounded-lg text-sm ${
@@ -87,21 +87,21 @@ export function ContactSection() {
               </div>
             )}
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label className="text-sm font-medium">Nome</label>
+                <label className="text-xs md:text-sm font-medium">Nome</label>
                 <Input 
                   placeholder="Seu nome completo" 
-                  className="h-9 mt-1"
+                  className="h-11 md:h-9 mt-1"
                   name="name"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium">Telefone</label>
+                <label className="text-xs md:text-sm font-medium">Telefone</label>
                 <Input 
                   placeholder="(11) 99999-9999" 
-                  className="h-9 mt-1"
+                  className="h-11 md:h-9 mt-1"
                   name="telefone"
                   type="tel"
                 />
@@ -109,33 +109,33 @@ export function ContactSection() {
             </div>
 
             <div>
-              <label className="text-sm font-medium">Objetivos</label>
+              <label className="text-xs md:text-sm font-medium">Objetivos</label>
               <Textarea
-                placeholder="Descreva brevemente o objetivo e o impacto esperado (eficiência, receita, redução de custos)"
-                className="resize-none h-20 mt-1"
+                placeholder="Descreva brevemente o objetivo e o impacto esperado"
+                className="resize-none h-20 md:h-20 mt-1"
                 name="objetivos"
               />
             </div>
 
             <div>
-              <label className="text-sm font-medium">Principal desafio de negócio</label>
+              <label className="text-xs md:text-sm font-medium">Principal desafio de negócio</label>
               <Textarea
-                placeholder="Quais indicadores você quer melhorar (tempo, custo, taxas de conversão, satisfação)?"
-                className="resize-none h-20 mt-1"
+                placeholder="Quais indicadores você quer melhorar?"
+                className="resize-none h-20 md:h-20 mt-1"
                 name="desafio"
               />
             </div>
 
             <div>
-              <label className="text-sm font-medium">Site ou rede social (opcional)</label>
+              <label className="text-xs md:text-sm font-medium">Site ou rede social <span className="text-muted-foreground">(opcional)</span></label>
               <Input 
-                placeholder="https://www.seu-site.com.br" 
-                className="h-9 mt-1"
+                placeholder="seusite.com.br" 
+                className="h-11 md:h-9 mt-1"
                 name="site"
               />
             </div>
 
-            <Button type="submit" className="w-full h-9" disabled={isLoading}>
+            <Button type="submit" className="w-full h-11 md:h-9" disabled={isLoading}>
               {isLoading ? "Enviando..." : "Enviar"}
             </Button>
           </form>

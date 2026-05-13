@@ -63,7 +63,7 @@ export function MethodologySection() {
   };
 
   return (
-    <section id="methodology" className="py-10 bg-background relative">
+    <section id="methodology" className="py-12 md:py-10 bg-background relative">
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.2]" />
       
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
@@ -72,45 +72,45 @@ export function MethodologySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-16 max-w-4xl mx-auto text-center"
+          className="mb-10 md:mb-16 max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4 md:mb-6">
             O <span className="text-primary">Ciclo 4E</span> da EficienciIA
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg lg:text-xl leading-relaxed">
             Toda transformação com IA começa com o diagnóstico certo. O <strong>Ciclo 4E</strong> é nossa metodologia para garantir que cada etapa gere valor antes de avançar para a próxima.
           </p>
         </motion.div>
 
         {/* Ciclo 4E Visual */}
-        <div className="relative mb-16">
+        <div className="relative mb-10 md:mb-16">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
           >
             {cycleSteps.map((step, index) => (
               <motion.div key={step.title} variants={itemVariants} className="relative">
-                {/* Arrow connector */}
+                {/* Arrow connector - only on large screens */}
                 {index < cycleSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 z-10 transform -translate-y-1/2">
-                    <ArrowRight className="h-6 w-6 text-primary/60" />
+                  <div className="hidden lg:block absolute top-1/2 -right-3 md:-right-4 z-10 transform -translate-y-1/2">
+                    <ArrowRight className="h-5 w-5 md:h-6 md:w-6 text-primary/60" />
                   </div>
                 )}
                 
                 <Card className="group h-full rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-1 transition-all hover:neon-ring text-center">
-                  <CardHeader className="pb-4">
-                    <div className="mb-4 flex justify-center">
-                      <div className={`inline-flex items-center justify-center rounded-full border px-3 py-1 text-sm font-medium ${step.color}`}>
+                  <CardHeader className="pb-3 md:pb-4">
+                    <div className="mb-3 md:mb-4 flex justify-center">
+                      <div className={`inline-flex items-center justify-center rounded-full border px-2.5 py-1 text-xs md:text-sm font-medium ${step.color}`}>
                         {step.step}
                       </div>
                     </div>
-                    <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-4 text-primary neon-ring mx-auto">
+                    <div className="mb-3 md:mb-4 inline-flex items-center justify-center rounded-xl bg-primary/10 p-3 md:p-4 text-primary neon-ring mx-auto">
                       {step.icon}
                     </div>
-                    <CardTitle className="text-xl font-bold tracking-tight">{step.title}</CardTitle>
+                    <CardTitle className="text-lg md:text-xl font-bold tracking-tight">{step.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-muted-foreground text-sm leading-relaxed">
@@ -128,10 +128,10 @@ export function MethodologySection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
-            className="flex justify-center mt-12"
+            className="flex justify-center mt-8 md:mt-12"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
-              <RefreshCw className="h-5 w-5 text-primary animate-spin" />
+            <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-primary/10 border border-primary/20 text-sm md:text-base">
+              <RefreshCw className="h-4 w-4 md:h-5 md:w-5 text-primary animate-spin" />
               <span className="text-primary font-medium">Ciclo de Inovação Contínua</span>
             </div>
           </motion.div>

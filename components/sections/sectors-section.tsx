@@ -96,7 +96,7 @@ export function SectorsSection() {
   const activeSector = sectors.find((s) => s.id === activeId) ?? sectors[0];
 
   return (
-    <section id="sectors" className="py-10 bg-background relative">
+    <section id="sectors" className="py-12 md:py-10 bg-background relative">
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.2]" />
 
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
@@ -105,13 +105,13 @@ export function SectorsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-12 text-center"
+          className="mb-8 md:mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">
             IA aplicada ao{" "}
             <span className="text-primary">seu setor</span>
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
             Cada setor tem desafios únicos. Veja como a Eficienci IA resolve os seus.
           </p>
         </motion.div>
@@ -122,7 +122,7 @@ export function SectorsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
+          className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:10"
           role="tablist"
           aria-label="Setores de atuação"
         >
@@ -134,14 +134,14 @@ export function SectorsSection() {
               aria-selected={activeId === sector.id}
               aria-controls={`panel-${sector.id}`}
               id={`tab-${sector.id}`}
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border text-sm font-medium transition-all duration-200 ${
+              className={`inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-full border text-xs md:text-sm font-medium transition-all duration-200 min-h-[40px] md:min-h-[44px] ${
                 activeId === sector.id
                   ? "bg-primary/10 border-primary text-primary shadow-[0_0_12px_hsl(var(--primary)/.2)]"
                   : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
               }`}
             >
               {sector.icon}
-              {sector.label}
+              <span className="hidden xs:inline">{sector.label}</span>
             </button>
           ))}
         </motion.div>
@@ -156,12 +156,12 @@ export function SectorsSection() {
           role="tabpanel"
           id={`panel-${activeId}`}
           aria-labelledby={`tab-${activeId}`}
-          className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm p-6 md:p-8"
+          className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm p-4 md:p-6 lg:p-8"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Left: description */}
             <div>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5 md:mb-6">
                 {activeSector.description}
               </p>
               <h4 className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -179,16 +179,16 @@ export function SectorsSection() {
 
             {/* Right: results */}
             <div className="flex flex-col justify-center">
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 md:mb-4">
                 Resultados esperados
               </h4>
-              <div className="space-y-3">
+              <div className="space-y-2 md:space-y-3">
                 {activeSector.results.map((result) => (
                   <div
                     key={result}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/15"
+                    className="flex items-center gap-2 md:gap-3 p-3 md:p-4 rounded-xl bg-primary/5 border border-primary/15"
                   >
-                    <TrendingUp className="h-5 w-5 text-primary flex-shrink-0" />
+                    <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0" />
                     <span className="text-sm font-medium">{result}</span>
                   </div>
                 ))}
