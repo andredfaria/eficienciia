@@ -130,7 +130,7 @@ export function HeroSection() {
           >
             <Image
               src="/hero-illustration.png"
-              alt="Consultoria em IA e automação empresarial — Eficienci IA"
+              alt="Consultoria em IA e automação empresarial | Eficienci IA"
               width={600}
               height={400}
               className="rounded-xl shadow-2xl object-cover neon-ring"

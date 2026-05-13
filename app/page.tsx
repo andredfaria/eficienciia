@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: '/hero-illustration.png',
         width: 1200,
         height: 630,
-        alt: 'Eficienci IA — Consultoria especializada em IA'
+        alt: 'Eficienci IA - Consultoria especializada em IA'
       }
     ],
     locale: 'pt_BR'
@@ -63,7 +63,7 @@ export default function Home() {
         name="Eficienci IA"
         url="https://eficienciia.com.br"
         logo="https://eficienciia.com.br/logo.png"
-        description="Consultoria especializada em IA para empresas brasileiras — do diagnóstico à operação"
+        description="Consultoria especializada em IA para empresas brasileiras - do diagnóstico à operação"
         address={{
           streetAddress: "Rua Assis Figueiredo, 1000",
           addressLocality: "Poços de Caldas",
@@ -80,7 +80,7 @@ export default function Home() {
       <FaqStructuredData questions={[
         {
           question: 'O que é um agente de IA e como ele pode ajudar minha empresa?',
-          answer: 'Um agente de IA é um software autônomo que executa tarefas repetitivas — como responder clientes no WhatsApp, qualificar leads, enviar e-mails e atualizar seu CRM — sem intervenção humana. Ele funciona 24 horas por dia, 7 dias por semana, com consistência e velocidade superiores ao trabalho manual.'
+          answer: 'Um agente de IA é um software autônomo que executa tarefas repetitivas como responder clientes no WhatsApp, qualificar leads, enviar e-mails e atualizar seu CRM sem intervenção humana. Ele funciona 24 horas por dia, 7 dias por semana, com consistência e velocidade superiores ao trabalho manual.'
         },
         {
           question: 'Quanto custa implementar automação com IA em uma empresa?',
@@ -92,11 +92,11 @@ export default function Home() {
         },
         {
           question: 'A Eficienci IA atende pequenas e médias empresas?',
-          answer: 'Sim. Atendemos empresas de todos os portes no Brasil. Pequenas e médias empresas são nosso foco principal — o objetivo é colocar tecnologia de ponta ao alcance de negócios que não têm time de TI próprio, com soluções práticas e ROI mensurável.'
+          answer: 'Sim. Atendemos empresas de todos os portes no Brasil. Pequenas e médias empresas são nosso foco principal o objetivo é colocar tecnologia de ponta ao alcance de negócios que não têm time de TI próprio, com soluções práticas e ROI mensurável.'
         },
         {
           question: 'É possível automatizar o atendimento no WhatsApp sem perder o toque humano?',
-          answer: 'Sim. Nossos agentes de IA são treinados com a linguagem e os valores da sua empresa. Eles resolvem as demandas rotineiras automaticamente e transferem para um atendente humano apenas quando necessário — preservando a experiência do cliente e liberando sua equipe para casos que realmente exigem atenção humana.'
+          answer: 'Sim. Nossos agentes de IA são treinados com a linguagem e os valores da sua empresa. Eles resolvem as demandas rotineiras automaticamente e transferem para um atendente humano apenas quando necessário preservando a experiência do cliente e liberando sua equipe para casos que realmente exigem atenção humana.'
         }
       ]} />
 

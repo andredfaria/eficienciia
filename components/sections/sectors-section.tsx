@@ -60,7 +60,7 @@ const sectors: Sector[] = [
     label: "Imobiliárias",
     icon: <Home className="h-4 w-4" />,
     description:
-      "Corretores gastam horas qualificando leads que nunca vão comprar. Nossa IA filtra, qualifica e agenda automaticamente — o corretor só fala com quem está pronto para decidir.",
+      "Corretores gastam horas qualificando leads que nunca vão comprar. Nossa IA filtra, qualifica e agenda automaticamenteo corretor só fala com quem está pronto para decidir.",
     applications: [
       "Qualificação automática de leads",
       "Agendamento de visitas por IA",

@@ -33,7 +33,7 @@ export function ServicesSection() {
             Como a Eficienci IA <span className="text-primary">trabalha</span>
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto mb-10 md:mb-12">
-            Da estratégia ao produto — escolha o ponto de entrada que faz mais sentido para o momento da sua empresa.
+            Da estratégia ao produto escolha o ponto de entrada que faz mais sentido para o momento da sua empresa.
           </p>
         </motion.div>
 
@@ -67,7 +67,7 @@ export function ServicesSection() {
                   Consultoria Estratégica de IA
                 </CardTitle>
                 <CardDescription className="text-blue-700 dark:text-blue-300 text-sm md:text-base leading-relaxed">
-                  Mapeamos seu negócio, identificamos onde a IA gera mais impacto e entregamos um roadmap executável com ROI projetado — antes de você investir um real na implementação.
+                  Mapeamos seu negócio, identificamos onde a IA gera mais impacto e entregamos um roadmap executável com ROI projetado antes de você investir um real na implementação.
                 </CardDescription>
               </CardHeader>
               
@@ -112,7 +112,7 @@ export function ServicesSection() {
                   Implementação e Automação
                 </CardTitle>
                 <CardDescription className="text-green-700 dark:text-green-300 text-sm md:text-base leading-relaxed">
-                  Desenvolvemos e integramos soluções de IA sob medida nos seus fluxos — WhatsApp, CRM, ERP ou sistema interno. Cada automação é construída para escalar sem aumentar sua equipe.
+                  Desenvolvemos e integramos soluções de IA sob medida nos seus fluxos WhatsApp, CRM, ERP ou sistema interno. Cada automação é construída para escalar sem aumentar sua equipe.
                 </CardDescription>
               </CardHeader>
               

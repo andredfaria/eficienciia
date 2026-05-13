@@ -24,7 +24,7 @@ export function MethodologySection() {
       step: "2", 
       title: "Explorar",
       icon: <Search className="h-8 w-8 text-primary" />,
-      description: "Testamos, validamos e desenhamos o roadmap certo para o seu contexto — sem vender ferramenta por vender.",
+      description: "Testamos, validamos e desenhamos o roadmap certo para o seu contexto sem vender ferramenta por vender.",
       color: "bg-green-500/10 text-green-600 border-green-200"
     },
     {

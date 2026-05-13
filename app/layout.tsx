@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: '/hero-illustration.png',
         width: 1200,
         height: 630,
-        alt: 'Eficienci IA — agentes de IA e automação empresarial'
+        alt: 'Eficienci IA agentes de IA e automação empresarial'
       }
     ]
   },

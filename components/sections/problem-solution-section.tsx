@@ -34,7 +34,7 @@ export function ProblemSolutionSection() {
       category: "Consultoria Estratégica",
       icon: <TrendingUp className="h-12 w-12 text-primary" />,
       title: "Relatórios e métricas de IA",
-      description: "Acompanhe o desempenho de cada automação com dashboards e relatórios que mostram ROI real — não só atividade, mas resultado.",
+      description: "Acompanhe o desempenho de cada automação com dashboards e relatórios que mostram ROI real não só atividade, mas resultado.",
       highlight: "Dados"
     },
     {
@@ -48,7 +48,7 @@ export function ProblemSolutionSection() {
       category: "Implementação",
       icon: <Cog className="h-12 w-12 text-primary" />,
       title: "Ferramentas de IA sob medida",
-      description: "Construímos exatamente o que o seu processo precisa — sem forçar sua operação a se adaptar a uma ferramenta genérica.",
+      description: "Construímos exatamente o que o seu processo precisa sem forçar sua operação a se adaptar a uma ferramenta genérica.",
       highlight: "Customização"
     },
     {
@@ -62,7 +62,7 @@ export function ProblemSolutionSection() {
       category: "Plug & Play",
       icon: <Bot className="h-12 w-12 text-primary" />,
       title: "Atendimento automático via WhatsApp",
-      description: "Ative um agente de IA que responde, qualifica e escalona chamados 24/7 — sem contratar mais atendentes.",
+      description: "Ative um agente de IA que responde, qualifica e escalona chamados 24/7 sem contratar mais atendentes.",
       highlight: "Bots de atendimento"
     },
     {
