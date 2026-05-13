@@ -78,7 +78,7 @@ export function SectorsSection() {
     <section id="sectors" className="py-12 md:py-10 bg-background relative">
       <div className="pointer-events-none absolute inset-0 tech-grid opacity-[0.2]" />
 
-      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+      <div className="container mx-auto px-3 md:px-6 max-w-4xl md:max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export function SectorsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:10"
+          className="flex overflow-x-auto justify-start gap-2 md:gap-3 mb-6 md:mb-8 pb-2 -mx-3 px-3 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible"
           role="tablist"
           aria-label="Setores de atuação"
         >
@@ -113,7 +113,7 @@ export function SectorsSection() {
               aria-selected={activeId === sector.id}
               aria-controls={`panel-${sector.id}`}
               id={`tab-${sector.id}`}
-              className={`inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-full border text-xs md:text-sm font-medium transition-all duration-200 min-h-[40px] md:min-h-[44px] ${
+              className={`inline-flex items-center gap-2 px-4 md:px-5 py-2.5 rounded-full border text-xs md:text-sm font-medium transition-all duration-200 min-h-[44px] whitespace-nowrap ${
                 activeId === sector.id
                   ? "bg-primary/10 border-primary text-primary shadow-[0_0_12px_hsl(var(--primary)/.2)]"
                   : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -135,20 +135,20 @@ export function SectorsSection() {
           role="tabpanel"
           id={`panel-${activeId}`}
           aria-labelledby={`tab-${activeId}`}
-          className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm p-4 md:p-6 lg:p-8"
+          className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm p-5 sm:p-6 lg:p-8 min-h-[320px]"
         >
-          <div className="space-y-5 md:space-y-6">
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          <div className="space-y-6">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               {activeSector.description}
             </p>
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
                 Aplicações
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {activeSector.applications.map((app) => (
-                  <li key={app} className="flex items-start gap-2 text-sm text-foreground">
-                    <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <li key={app} className="flex items-start gap-3 text-base text-foreground">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     {app}
                   </li>
                 ))}
