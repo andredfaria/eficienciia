@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Phone, HardHat, ShoppingCart, Home, CheckCircle, TrendingUp } from "lucide-react";
+import { Phone, HardHat, ShoppingCart, Home, CheckCircle } from "lucide-react";
 
 // TODO: substituir resultados por dados reais de clientes quando disponíveis
 
@@ -13,7 +13,6 @@ interface Sector {
   icon: ReactNode;
   description: string;
   applications: string[];
-  results: string[];
 }
 
 const sectors: Sector[] = [
@@ -29,28 +28,18 @@ const sectors: Sector[] = [
       "Escalonamento inteligente para humanos",
       "Análise de sentimento em tempo real",
     ],
-    results: [
-      "↓ 60% no custo por atendimento",
-      "↑ 70% de resoluções sem agente humano",
-      "Atendimento 24/7 sem equipe extra",
-    ],
   },
   {
     id: "construcao",
     label: "Construção Civil",
     icon: <HardHat className="h-4 w-4" />,
     description:
-      "Projetos arquitetônicos e obras envolvem documentação extensa, orçamentos complexos e coordenação de múltiplos fornecedores. A IA reduz retrabalho e acelera aprovações.",
+      "Projetos arquitetônicos e obras envolvem documentação extensa, orçamentos complexas e coordenação de múltiplos fornecedores. A IA reduz retrabalho e acelera aprovações.",
     applications: [
       "Análise e extração de dados de projetos",
       "Geração automática de orçamentos",
       "Gestão de documentação técnica com IA",
       "Alertas de desvio de cronograma",
-    ],
-    results: [
-      "3× mais rápido na elaboração de orçamentos",
-      "↓ 40% de retrabalho documental",
-      "Aprovações mais ágeis com menos revisões",
     ],
   },
   {
@@ -65,11 +54,6 @@ const sectors: Sector[] = [
       "Segmentação inteligente de campanhas",
       "Recomendação de produtos personalizada",
     ],
-    results: [
-      "+35% de recuperação de carrinhos abandonados",
-      "↓ 50% no tempo de resposta ao cliente",
-      "Campanhas com 2× mais conversão",
-    ],
   },
   {
     id: "imobiliaria",
@@ -82,11 +66,6 @@ const sectors: Sector[] = [
       "Agendamento de visitas por IA",
       "Follow-up automático no WhatsApp",
       "Análise de perfil e match com imóveis",
-    ],
-    results: [
-      "2× mais visitas agendadas por corretor",
-      "↓ 70% do tempo em leads frios",
-      "Follow-up 100% automatizado",
     ],
   },
 ];
@@ -158,12 +137,11 @@ export function SectorsSection() {
           aria-labelledby={`tab-${activeId}`}
           className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm p-4 md:p-6 lg:p-8"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            {/* Left: description */}
+          <div className="space-y-5 md:space-y-6">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              {activeSector.description}
+            </p>
             <div>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5 md:mb-6">
-                {activeSector.description}
-              </p>
               <h4 className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
                 Aplicações
               </h4>
@@ -175,24 +153,6 @@ export function SectorsSection() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Right: results */}
-            <div className="flex flex-col justify-center">
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 md:mb-4">
-                Resultados esperados
-              </h4>
-              <div className="space-y-2 md:space-y-3">
-                {activeSector.results.map((result) => (
-                  <div
-                    key={result}
-                    className="flex items-center gap-2 md:gap-3 p-3 md:p-4 rounded-xl bg-primary/5 border border-primary/15"
-                  >
-                    <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0" />
-                    <span className="text-sm font-medium">{result}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </motion.div>
