@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     company: "YouCon Projetos",
     sector: "construcao",
     initials: "TC",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQFaeC7IRyBYiQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724012840249?e=1779926400&v=beta&t=6SBZUJ-Ge45kQcu8s9JXDVDY1HTdvqYhLFWuChufOvs",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQFaeC7IRyBYiQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724012840230?e=2147483647&v=beta&t=K0X7mZHRAQrorGk_LVRR2EIX8pHup_CvNGOfeXgHknM",
     link: "https://youconprojetos.com.br",
   },
   {
@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
     company: "Indominus",
     sector: "tecnologia",
     initials: "RM",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQHlcd30SK6UMA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723574877265?e=1779926400&v=beta&t=4exTjik5i1IY2eED-0OcW-wHH_zRYNQeRPib83sx8rc",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQHlcd30SK6UMA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723574877229?e=2147483647&v=beta&t=EfwrJS1lfiLtoBRaZgiEKsO-nWPnnHypwS3pqoYHjxM",
     link: "https://indominus.com.br",
   },
   {
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
     company: "Mattos Imobiliária",
     sector: "imobiliaria",
     initials: "AM",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQHNj7P74WRncw/profile-displayphoto-crop_800_800/B4DZ12rmXyIEAM-/0/1775812635185?e=1779926400&v=beta&t=Ba7i-wa5aI4veQN6iIWxkUFey3rG0xlxIcrHfrDGb8k",
+    image: "https://scontent-gru1-2.cdninstagram.com/v/t51.82787-19/670372466_18104151110295855_986996540662317964_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby44OTYuYzIifQ&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFkwE0UE7hSY67AaRGusfJao9AJNLa74t0qPbXhmTOxJGmETpYX6LCVxvr5ptIun0o&_nc_ohc=EUvKpSiknpIQ7kNvwE4GHo-&_nc_gid=ORFlww70zKfNImo4R94NwQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af8Pcr_838s-3RsIMUALKfYV5LIK8xMOzNqAjjzia6dOrA&oe=6A306714&_nc_sid=7a9f4b",
     link: "https://www.mattosimobiliaria.com.br",
   },
 ]
