@@ -155,11 +155,16 @@ Tudo derivado de faixas (ponto médio). Fator conservador e com teto para não p
 | Maturidade: não sei / quero começar / já automatizo | 2 / 8 / 12 |
 | Prontidão (CRM+dados): organizado / parcial / nenhum | 10 / 5 / 0 |
 
-**Classificação e recomendação:**
-- **≥ 70 + CRM ok + dados ok → Quente** → *Implementação e Automação* (sprint de automação). CTA: agendar diagnóstico.
-- **≥ 55 sem CRM → Qualificável** → *Implementação e Automação* começando pela implantação/integração de CRM.
-- **≥ 55 com dados espalhados → Qualificável** → *Consultoria Estratégica de IA* (diagnóstico + estruturação) primeiro.
-- **< 45 (cenário inicial) → Baixa maturidade** → *Soluções Prontas para Usar* (quick wins / no-code) ou material educativo.
+**Classificação por score (faixas contíguas, sem vão):**
+- **≥ 70 → Quente**
+- **45–69 → Qualificável**
+- **< 45 → Baixa maturidade**
+
+**Recomendação (gates de pré-requisito têm prioridade sobre o score):**
+- **Quente + CRM ok + dados ok** → *Implementação e Automação* (sprint de automação). CTA: agendar diagnóstico.
+- **Quente/Qualificável sem CRM** → *Implementação e Automação* começando pela implantação/integração de CRM.
+- **Quente/Qualificável com dados espalhados** → *Consultoria Estratégica de IA* (diagnóstico + estruturação) primeiro.
+- **Baixa maturidade (cenário inicial)** → *Soluções Prontas para Usar* (quick wins / no-code) ou material educativo.
 
 **Prioridade dos gates:** os pré-requisitos (CRM, dados) têm prioridade sobre o score. Um lead quente sem CRM é roteado para "organizar primeiro" — é o que faz a calculadora parecer honesta e consultiva.
 
