@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const phrases = [
@@ -119,6 +120,16 @@ export function HeroSection() {
               >
                 Ver cases por setor
               </Button>
+
+              <Link href="/calculadora">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full text-base sm:text-lg min-h-[48px] w-full sm:w-auto"
+                >
+                  Calcular minha economia
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
 
