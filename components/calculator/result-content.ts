@@ -5,7 +5,6 @@ interface ResultCopy {
   message: string;
   ctaPrimary: string;
   ctaSecondary: string;
-  pillarLabel: string;
 }
 
 const PILLAR_LABEL: Record<Pillar, string> = {
@@ -14,7 +13,7 @@ const PILLAR_LABEL: Record<Pillar, string> = {
   'solucoes-prontas': 'Soluções Prontas para Usar',
 };
 
-export const RESULT_COPY: Record<ReasonKey, Omit<ResultCopy, 'pillarLabel'> & { pillar: Pillar }> = {
+export const RESULT_COPY: Record<ReasonKey, ResultCopy & { pillar: Pillar }> = {
   pronto: {
     pillar: 'implementacao-automacao',
     headline: 'Sua operação tem alto potencial de automação.',
