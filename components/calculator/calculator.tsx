@@ -9,7 +9,9 @@ import { ContactGate, type ContactData } from './contact-gate';
 import { ResultView } from './result-view';
 
 const WEBHOOK_URL = 'https://n8n.eficienciia.com.br/webhook/salva-formulario';
-const CONTACT_FALLBACK = '#contact';
+const CONTACT_URL = '/#contact';
+const WHATSAPP_URL =
+  'https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO';
 
 type Stage = 'questions' | 'gate' | 'result';
 
@@ -73,8 +75,12 @@ export function Calculator() {
     }
   };
 
-  const handleCtaClick = () => {
-    window.location.href = CONTACT_FALLBACK;
+  const handleCtaClick = (kind: 'primary' | 'secondary') => {
+    if (kind === 'secondary') {
+      window.open(WHATSAPP_URL, '_blank');
+    } else {
+      window.location.href = CONTACT_URL;
+    }
   };
 
   return (
