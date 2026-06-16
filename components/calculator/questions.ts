@@ -2,17 +2,19 @@ import type { Answers } from '@/lib/calculator';
 
 export type QuestionId = keyof Answers;
 
-export interface Option {
-  value: string;
+interface Option<V extends string> {
+  value: V;
   label: string;
 }
 
-export interface Question {
-  id: QuestionId;
+interface QuestionConfig<K extends QuestionId> {
+  id: K;
   title: string;
   help: string;
-  options: Option[];
+  options: Option<Answers[K]>[];
 }
+
+export type Question = { [K in QuestionId]: QuestionConfig<K> }[QuestionId];
 
 export const QUESTIONS: Question[] = [
   {

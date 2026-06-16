@@ -68,11 +68,56 @@ export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: Conta
           </div>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <Input name="name" placeholder="Seu nome" className="h-11" />
-          <Input name="telefone" type="tel" placeholder="WhatsApp" className="h-11" />
+          <div>
+            <label htmlFor="contact-gate-name" className="text-xs md:text-sm font-medium">
+              Nome
+            </label>
+            <Input
+              id="contact-gate-name"
+              name="name"
+              placeholder="Seu nome"
+              className="h-11 mt-1"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="contact-gate-telefone" className="text-xs md:text-sm font-medium">
+              WhatsApp
+            </label>
+            <Input
+              id="contact-gate-telefone"
+              name="telefone"
+              type="tel"
+              placeholder="WhatsApp"
+              className="h-11 mt-1"
+              required
+            />
+          </div>
         </div>
-        <Input name="email" type="email" placeholder="E-mail" className="h-11" />
-        <Input name="empresa" placeholder="Empresa (opcional)" className="h-11" />
+        <div>
+          <label htmlFor="contact-gate-email" className="text-xs md:text-sm font-medium">
+            E-mail
+          </label>
+          <Input
+            id="contact-gate-email"
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            className="h-11 mt-1"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="contact-gate-empresa" className="text-xs md:text-sm font-medium">
+            Empresa <span className="text-muted-foreground">(opcional)</span>
+          </label>
+          <Input
+            id="contact-gate-empresa"
+            name="empresa"
+            placeholder="Empresa (opcional)"
+            className="h-11 mt-1"
+          />
+        </div>
         <Button type="submit" className="h-11 w-full" disabled={isSubmitting}>
           {isSubmitting ? 'Liberando...' : 'Ver minha estimativa completa'}
         </Button>
