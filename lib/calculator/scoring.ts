@@ -1,4 +1,5 @@
 import type { Answers, Classification, CrmStatus, DataOrg } from './types';
+import { SCORE_QUENTE, SCORE_QUALIFICAVEL } from './constants';
 
 const teamPoints: Record<Answers['teamSize'], number> = {
   '1': 5,
@@ -17,6 +18,7 @@ const repPoints: Record<Answers['repHours'], number> = {
 const costPoints: Record<Answers['costBand'], number> = {
   'ate-2k': 5,
   '2-4k': 12,
+  // '4-7k' e '7k+' saturam no mesmo teto (custo alto)
   '4-7k': 18,
   '7k+': 18,
 };
@@ -46,7 +48,7 @@ export function leadScore(a: Answers): number {
 }
 
 export function classify(score: number): Classification {
-  if (score >= 70) return 'quente';
-  if (score >= 45) return 'qualificavel';
+  if (score >= SCORE_QUENTE) return 'quente';
+  if (score >= SCORE_QUALIFICAVEL) return 'qualificavel';
   return 'baixa-maturidade';
 }

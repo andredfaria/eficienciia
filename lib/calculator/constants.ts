@@ -7,6 +7,10 @@ export const FATOR_BASE = 0.4;
 export const FATOR_MIN = 0.25;
 export const FATOR_MAX = 0.55;
 
+// Limiares de classificacao do lead score (ajustaveis)
+export const SCORE_QUENTE = 70;
+export const SCORE_QUALIFICAVEL = 45;
+
 export const PESSOAS_MIDPOINT: Record<TeamSize, number> = {
   '1': 1,
   '2-5': 3.5,
