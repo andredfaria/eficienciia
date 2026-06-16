@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
     "build:static": "cp next.config.static.js next.config.js && next build && cp next.config.js next.config.static.js",
     "export": "npm run build:static"
   },
@@ -70,5 +71,8 @@
     "typescript": "5.2.2",
     "vaul": "^0.9.9",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "vitest": "^2"
   }
 }
