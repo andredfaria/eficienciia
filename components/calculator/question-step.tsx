@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
 import type { Question } from './questions';
 
@@ -39,7 +38,12 @@ export function QuestionStep({
           <span>Passo {index + 1} de {total}</span>
           <span>{progress}%</span>
         </div>
-        <Progress value={progress} className="h-1.5" />
+        <div className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
+          <div
+            className="h-full rounded-full bg-primary transition-all duration-300"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
       </div>
 
       <h2 className="text-xl md:text-2xl font-bold mb-1">{question.title}</h2>
