@@ -6,7 +6,20 @@ export type CrmStatus = 'organizado' | 'baguncado' | 'planilha' | 'nenhum';
 export type DataOrg = 'organizados' | 'parciais' | 'espalhados';
 export type Maturity = 'ja-automatizo' | 'quero-comecar' | 'nao-sei';
 
+export type Segment =
+  | 'comercio-varejo'
+  | 'ecommerce'
+  | 'servicos'
+  | 'saude'
+  | 'educacao'
+  | 'industria'
+  | 'tecnologia'
+  | 'imobiliario'
+  | 'financeiro'
+  | 'outro';
+
 export interface Answers {
+  segment: Segment;      // contexto qualitativo; nao entra no calculo
   teamSize: TeamSize;
   repHours: RepHours;
   volume: Volume;        // contexto qualitativo; nao entra no calculo

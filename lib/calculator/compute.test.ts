@@ -3,6 +3,7 @@ import { automationFactor, computeEstimate } from './compute';
 import type { Answers } from './types';
 
 const base: Answers = {
+  segment: 'outro',
   teamSize: '6-15',
   repHours: '3-4',
   volume: 'alto',

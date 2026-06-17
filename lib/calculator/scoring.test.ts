@@ -3,6 +3,7 @@ import { leadScore, classify } from './scoring';
 import type { Answers } from './types';
 
 const quente: Answers = {
+  segment: 'outro',
   teamSize: '16+',      // 30
   repHours: '5+',       // 30
   volume: 'muito-alto',
@@ -19,6 +20,7 @@ describe('leadScore', () => {
 
   it('cenario minimo soma 17', () => {
     const frio: Answers = {
+      segment: 'outro',
       teamSize: '1',        // 5
       repHours: '<1',       // 5
       volume: 'baixo',

@@ -3,6 +3,7 @@ import { recommend, financials, computeResult } from './recommend';
 import type { Answers } from './types';
 
 const prontoQuente: Answers = {
+  segment: 'outro',
   teamSize: '16+', repHours: '5+', volume: 'muito-alto', costBand: '7k+',
   crm: 'organizado', dataOrg: 'organizados', maturity: 'ja-automatizo',
 };
