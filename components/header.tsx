@@ -70,14 +70,25 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLinks />
-          <Button
-            size="sm"
-            className="rounded-full hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
-            onClick={() => window.open('https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO', '_blank')}
-          >
-            Fale com Especialistas
-            <ChevronRightIcon className="ml-1 h-4 w-4" />
-          </Button>
+          <div className="flex items-center gap-3">
+            <Link href="/calculadora">
+              <Button
+                size="sm"
+                className="rounded-full group shadow-[0_0_0_1px_hsl(var(--primary)/.45),0_0_14px_hsl(var(--primary)/.4)] hover:shadow-[0_0_0_1px_hsl(var(--primary)/.6),0_0_22px_hsl(var(--primary)/.5)]"
+              >
+                Calcular economia
+                <ChevronRightIcon className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+            <Button
+              size="sm"
+              variant="outline"
+              className="rounded-full"
+              onClick={() => window.open('https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO', '_blank')}
+            >
+              Fale com Especialistas
+            </Button>
+          </div>
         </nav>
 
         {/* Mobile Navigation Toggle */}
@@ -101,15 +112,21 @@ export function Header() {
         >
           <div className="container mx-auto px-4 py-5 flex flex-col space-y-3">
             <NavLinks mobile onClick={() => setIsMenuOpen(false)} />
+            <Link href="/calculadora" onClick={() => setIsMenuOpen(false)} className="w-full">
+              <Button className="w-full rounded-full min-h-[48px] group shadow-[0_0_0_1px_hsl(var(--primary)/.45),0_0_14px_hsl(var(--primary)/.4)] hover:shadow-[0_0_0_1px_hsl(var(--primary)/.6),0_0_22px_hsl(var(--primary)/.5)]">
+                Calcular economia
+                <ChevronRightIcon className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
             <Button
+              variant="outline"
               onClick={() => {
                 window.open('https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO', '_blank');
                 setIsMenuOpen(false);
               }}
-              className="w-full rounded-full min-h-[48px] hover:shadow-[0_0_0_1px_hsl(var(--primary)/.4),0_0_14px_hsl(var(--primary)/.35)]"
+              className="w-full rounded-full min-h-[48px]"
             >
               Fale com Especialistas
-              <ChevronRightIcon className="ml-1 h-4 w-4" />
             </Button>
           </div>
         </motion.div>
@@ -123,7 +140,6 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
     { href: "#services", label: "Serviços", isHash: true },
     { href: "#methodology", label: "Metodologia", isHash: true },
     { href: "#solution", label: "Soluções", isHash: true },
-    { href: "/calculadora", label: "Calculadora", isHash: false },
     { href: "/blog", label: "Blog", isHash: false },
     { href: "#contact", label: "Contato", isHash: true },
   ];
