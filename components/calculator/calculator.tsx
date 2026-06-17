@@ -46,6 +46,7 @@ export function Calculator() {
     const payload = {
       ...contact,
       origem: 'calculadora-roi',
+      segmento: (answers as Answers).segment,
       respostas: answers,
       lead_score: res.score,
       classificacao: res.recommendation.classification,

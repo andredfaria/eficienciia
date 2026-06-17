@@ -18,6 +18,23 @@ export type Question = { [K in QuestionId]: QuestionConfig<K> }[QuestionId];
 
 export const QUESTIONS: Question[] = [
   {
+    id: 'segment',
+    title: 'Qual o segmento da sua empresa?',
+    help: 'Pra adaptarmos a recomendação ao seu setor.',
+    options: [
+      { value: 'comercio-varejo', label: 'Comércio / Varejo' },
+      { value: 'ecommerce', label: 'E-commerce' },
+      { value: 'servicos', label: 'Serviços' },
+      { value: 'saude', label: 'Saúde / Clínicas' },
+      { value: 'educacao', label: 'Educação' },
+      { value: 'industria', label: 'Indústria' },
+      { value: 'tecnologia', label: 'Tecnologia / SaaS' },
+      { value: 'imobiliario', label: 'Imobiliário' },
+      { value: 'financeiro', label: 'Financeiro / Contábil' },
+      { value: 'outro', label: 'Outro' },
+    ],
+  },
+  {
     id: 'teamSize',
     title: 'Quantas pessoas tocam o operacional?',
     help: 'Considere atendimento, suporte, cadastro e tarefas manuais.',
