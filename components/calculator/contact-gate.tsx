@@ -6,6 +6,7 @@ import { Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { formatHoras } from './format';
+import { isValidEmail, isValidBRPhone, maskBRPhone } from '@/lib/calculator/validate';
 
 export interface ContactData {
   name: string;
@@ -21,22 +22,28 @@ interface ContactGateProps {
 }
 
 export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: ContactGateProps) {
-  const [error, setError] = useState('');
+  type FieldErrors = { name?: string; telefone?: string; email?: string };
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [telefone, setTelefone] = useState('');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data: ContactData = {
       name: String(fd.get('name') ?? '').trim(),
-      telefone: String(fd.get('telefone') ?? '').trim(),
+      telefone: telefone.trim(),
       email: String(fd.get('email') ?? '').trim(),
       empresa: String(fd.get('empresa') ?? '').trim(),
     };
-    if (!data.name || !data.telefone || !data.email) {
-      setError('Preencha nome, WhatsApp e e-mail para liberar o resultado.');
-      return;
-    }
-    setError('');
+
+    const next: FieldErrors = {};
+    if (!data.name) next.name = 'Informe seu nome.';
+    if (!isValidBRPhone(data.telefone)) next.telefone = 'Informe um WhatsApp válido com DDD.';
+    if (!isValidEmail(data.email)) next.email = 'Informe um e-mail válido.';
+
+    setErrors(next);
+    if (Object.keys(next).length > 0) return;
+
     onSubmit(data);
   };
 
@@ -62,11 +69,6 @@ export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: Conta
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-3">
-        {error && (
-          <div className="rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-500">
-            {error}
-          </div>
-        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label htmlFor="contact-gate-name" className="text-xs md:text-sm font-medium">
@@ -79,6 +81,9 @@ export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: Conta
               className="h-11 mt-1"
               required
             />
+            {errors.name && (
+              <p className="mt-1 text-xs text-red-500">{errors.name}</p>
+            )}
           </div>
           <div>
             <label htmlFor="contact-gate-telefone" className="text-xs md:text-sm font-medium">
@@ -88,10 +93,16 @@ export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: Conta
               id="contact-gate-telefone"
               name="telefone"
               type="tel"
-              placeholder="WhatsApp"
+              inputMode="numeric"
+              placeholder="(35) 99999-9999"
               className="h-11 mt-1"
+              value={telefone}
+              onChange={(e) => setTelefone(maskBRPhone(e.target.value))}
               required
             />
+            {errors.telefone && (
+              <p className="mt-1 text-xs text-red-500">{errors.telefone}</p>
+            )}
           </div>
         </div>
         <div>
@@ -106,6 +117,9 @@ export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: Conta
             className="h-11 mt-1"
             required
           />
+          {errors.email && (
+            <p className="mt-1 text-xs text-red-500">{errors.email}</p>
+          )}
         </div>
         <div>
           <label htmlFor="contact-gate-empresa" className="text-xs md:text-sm font-medium">
