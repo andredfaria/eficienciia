@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+const CALENDAR_URL = "https://calendar.app.google/X6J4sz2SFLtK7LDs7";
+
 const phrases = [
   "IA que gera resultado real",
   "IA que gera ROI mensurável",
@@ -94,29 +96,24 @@ export function HeroSection() {
               transition={{ delay: 0.5, duration: 0.5 }}
               className="flex flex-col sm:flex-row flex-wrap gap-3"
             >
-              <Button
-                size="lg"
-                className="rounded-full text-base sm:text-lg min-h-[48px] group hover:shadow-[0_0_0_1px_hsl(var(--primary)/.45),0_0_20px_hsl(var(--primary)/.35),0_0_40px_hsl(var(--primary)/.25)]"
-                onClick={() =>
-                  window.open(
-                    "https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO",
-                    "_blank"
-                  )
-                }
-              >
-                Quero uma consultoria
-                <ChevronRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-
-              <Link href="/calculadora">
+              <Link href="/calculadora" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="rounded-full text-base sm:text-lg min-h-[48px] w-full sm:w-auto"
+                  className="rounded-full text-base sm:text-lg min-h-[48px] w-full sm:w-auto group shadow-[0_0_0_1px_hsl(var(--primary)/.5),0_0_24px_hsl(var(--primary)/.4),0_0_48px_hsl(var(--primary)/.25)] hover:shadow-[0_0_0_1px_hsl(var(--primary)/.65),0_0_32px_hsl(var(--primary)/.55),0_0_64px_hsl(var(--primary)/.35)]"
                 >
-                  Calcular minha economia
+                  Calcular minha economia grátis
+                  <ChevronRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full text-base sm:text-lg min-h-[48px] w-full sm:w-auto"
+                onClick={() => window.open(CALENDAR_URL, "_blank")}
+              >
+                Quero uma consultoria
+              </Button>
             </motion.div>
           </motion.div>
 
