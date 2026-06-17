@@ -81,6 +81,9 @@ export function ContactGate({ estimate, isSubmitting, onSubmit }: ContactGatePro
         <p className="text-center text-sm text-muted-foreground">
           em tarefas automatizáveis.
         </p>
+        <p className="mt-3 text-center text-xs text-muted-foreground">
+          Valores estimados; podem variar conforme o investimento do projeto.
+        </p>
       </div>
 
       <div className="mb-5 flex items-center gap-2 text-sm text-muted-foreground">

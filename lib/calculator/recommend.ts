@@ -5,8 +5,9 @@ import type {
   Pillar,
   Recommendation,
   CalculatorResult,
+  TeamSize,
 } from './types';
-import { INVESTIMENTO_REF } from './constants';
+import { INVESTIMENTO_REF, INVESTIMENTO_MULT } from './constants';
 import { computeEstimate } from './compute';
 import { leadScore, classify } from './scoring';
 
@@ -25,8 +26,8 @@ export function recommend(a: Answers, classification: Classification): Recommend
   return { pillar: 'implementacao-automacao', classification, reasonKey: 'pronto' };
 }
 
-export function financials(economiaMes: number, pillar: Pillar): Financials {
-  const investimentoRef = INVESTIMENTO_REF[pillar];
+export function financials(economiaMes: number, pillar: Pillar, teamSize: TeamSize): Financials {
+  const investimentoRef = Math.round(INVESTIMENTO_REF[pillar] * INVESTIMENTO_MULT[teamSize]);
   const paybackMeses = economiaMes > 0 ? investimentoRef / economiaMes : Infinity;
   const roiAnoPct = ((economiaMes * 12 - investimentoRef) / investimentoRef) * 100;
   return { investimentoRef, paybackMeses, roiAnoPct };
@@ -37,6 +38,6 @@ export function computeResult(a: Answers): CalculatorResult {
   const score = leadScore(a);
   const classification = classify(score);
   const recommendation = recommend(a, classification);
-  const fin = financials(estimate.economiaMes, recommendation.pillar);
+  const fin = financials(estimate.economiaMes, recommendation.pillar, a.teamSize);
   return { estimate, score, recommendation, financials: fin };
 }

@@ -15,18 +15,18 @@ const base: Answers = {
 
 describe('automationFactor', () => {
   it('cenario ideal soma os modificadores e respeita o teto', () => {
-    // 0.40 + 0.05 (dados) + 0.05 (crm) + 0.05 (maturidade) = 0.55
-    expect(automationFactor(base)).toBeCloseTo(0.55, 5);
+    // 0.20 + 0.05 (dados) + 0.05 (crm) + 0.05 (maturidade) = 0.35
+    expect(automationFactor(base)).toBeCloseTo(0.35, 5);
   });
 
   it('cenario ruim aplica penalidades e respeita o piso', () => {
     const ruim: Answers = { ...base, crm: 'nenhum', dataOrg: 'espalhados', maturity: 'nao-sei' };
-    // 0.40 - 0.10 (dados) - 0.05 (sem crm) = 0.25 (piso)
-    expect(automationFactor(ruim)).toBeCloseTo(0.25, 5);
+    // 0.20 - 0.10 (dados) - 0.05 (sem crm) = 0.05 -> piso 0.12
+    expect(automationFactor(ruim)).toBeCloseTo(0.12, 5);
   });
 
-  it('nunca passa do teto de 0.55', () => {
-    expect(automationFactor(base)).toBeLessThanOrEqual(0.55);
+  it('nunca passa do teto de 0.35', () => {
+    expect(automationFactor(base)).toBeLessThanOrEqual(0.35);
   });
 });
 
@@ -35,12 +35,12 @@ describe('computeEstimate', () => {
     // n=10, horas/dia=3.5, custo_mes=5500
     // custo_hora = 5500/176 = 31.25
     // tempo_rep_mes = 3.5 * 22 * 10 = 770h
-    // fator = 0.55 -> horas_liberadas = 423.5
-    // economia_mes = 770 * 31.25 * 0.55 = 13234.375
+    // fator = 0.35 -> horas_liberadas = 269.5
+    // economia_mes = 770 * 31.25 * 0.35 = 8421.875
     const e = computeEstimate(base);
-    expect(e.fator).toBeCloseTo(0.55, 5);
-    expect(e.horasLiberadasMes).toBeCloseTo(423.5, 2);
-    expect(e.economiaMes).toBeCloseTo(13234.375, 2);
-    expect(e.economiaAno).toBeCloseTo(13234.375 * 12, 2);
+    expect(e.fator).toBeCloseTo(0.35, 5);
+    expect(e.horasLiberadasMes).toBeCloseTo(269.5, 2);
+    expect(e.economiaMes).toBeCloseTo(8421.875, 2);
+    expect(e.economiaAno).toBeCloseTo(8421.875 * 12, 2);
   });
 });

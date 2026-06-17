@@ -3,9 +3,11 @@ import type { TeamSize, RepHours, CostBand, Pillar } from './types';
 export const DIAS_UTEIS_MES = 22;
 export const HORAS_UTEIS_MES = 176;
 
-export const FATOR_BASE = 0.4;
-export const FATOR_MIN = 0.25;
-export const FATOR_MAX = 0.55;
+// Fator de automacao conservador: % do tempo repetitivo que a automacao
+// realmente elimina. Mantido baixo de proposito para nao superestimar economia.
+export const FATOR_BASE = 0.2;
+export const FATOR_MIN = 0.12;
+export const FATOR_MAX = 0.35;
 
 // Limiares de classificacao do lead score (ajustaveis)
 export const SCORE_QUENTE = 70;
@@ -37,4 +39,14 @@ export const INVESTIMENTO_REF: Record<Pillar, number> = {
   'implementacao-automacao': 25000,
   'consultoria-estrategica': 12000,
   'solucoes-prontas': 5000,
+};
+
+// O investimento escala com o porte da empresa (numero de pessoas no operacional).
+// Projeto maior custa mais, o que alonga o payback de operacoes grandes e evita
+// payback irreal em operacoes pequenas.
+export const INVESTIMENTO_MULT: Record<TeamSize, number> = {
+  '1': 0.3,
+  '2-5': 0.6,
+  '6-15': 2.0,
+  '16+': 3.2,
 };

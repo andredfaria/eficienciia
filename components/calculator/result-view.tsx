@@ -58,7 +58,9 @@ export function ResultView({ result, onCtaClick }: ResultViewProps) {
       </Card>
 
       <p className="mb-4 text-center text-xs text-muted-foreground">
-        Estimativa baseada nas suas respostas. Os números reais dependem de um diagnóstico.
+        Valores estimados com base nas suas respostas. A economia e o payback são aproximações e
+        podem variar conforme o escopo e o investimento do projeto. Os números reais dependem de
+        um diagnóstico.
       </p>
 
       <div className="flex flex-col gap-3">

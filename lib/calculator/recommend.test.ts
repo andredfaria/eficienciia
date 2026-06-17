@@ -35,16 +35,16 @@ describe('recommend (gates tem prioridade sobre score)', () => {
 });
 
 describe('financials', () => {
-  it('payback e roi com investimento de referencia do pilar', () => {
-    // implementacao-automacao -> 25000; economiaMes 5000
-    const f = financials(5000, 'implementacao-automacao');
-    expect(f.investimentoRef).toBe(25000);
-    expect(f.paybackMeses).toBeCloseTo(5, 5);
-    expect(f.roiAnoPct).toBeCloseTo(((5000 * 12 - 25000) / 25000) * 100, 5);
+  it('payback e roi com investimento escalado pelo porte', () => {
+    // implementacao-automacao 25000 x mult 6-15 (2.0) = 50000; economiaMes 5000
+    const f = financials(5000, 'implementacao-automacao', '6-15');
+    expect(f.investimentoRef).toBe(50000);
+    expect(f.paybackMeses).toBeCloseTo(10, 5);
+    expect(f.roiAnoPct).toBeCloseTo(((5000 * 12 - 50000) / 50000) * 100, 5);
   });
 
   it('economia zero retorna payback Infinity sem quebrar', () => {
-    const f = financials(0, 'solucoes-prontas');
+    const f = financials(0, 'solucoes-prontas', '1');
     expect(f.paybackMeses).toBe(Infinity);
   });
 });
