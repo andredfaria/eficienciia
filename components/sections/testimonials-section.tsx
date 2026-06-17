@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     sector: "tecnologia",
     initials: "RM",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQHlcd30SK6UMA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723574877229?e=2147483647&v=beta&t=EfwrJS1lfiLtoBRaZgiEKsO-nWPnnHypwS3pqoYHjxM",
-    link: "https://indominus.com.br",
+    link: "https://indominus.io/",
   },
   {
     quote:
@@ -49,8 +49,8 @@ const testimonials: Testimonial[] = [
     company: "Mattos Imobiliária",
     sector: "imobiliaria",
     initials: "AM",
-    image: "https://scontent-gru1-2.cdninstagram.com/v/t51.82787-19/670372466_18104151110295855_986996540662317964_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby44OTYuYzIifQ&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFkwE0UE7hSY67AaRGusfJao9AJNLa74t0qPbXhmTOxJGmETpYX6LCVxvr5ptIun0o&_nc_ohc=EUvKpSiknpIQ7kNvwE4GHo-&_nc_gid=ORFlww70zKfNImo4R94NwQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af8Pcr_838s-3RsIMUALKfYV5LIK8xMOzNqAjjzia6dOrA&oe=6A306714&_nc_sid=7a9f4b",
-    link: "https://www.mattosimobiliaria.com.br",
+    image: "/testimonials/andre-mattos.jpg",
+    link: "https://mattosonline.com.br/",
   },
 ]
 
