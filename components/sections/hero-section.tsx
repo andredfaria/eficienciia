@@ -108,19 +108,6 @@ export function HeroSection() {
                 <ChevronRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
 
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full text-base sm:text-lg min-h-[48px]"
-                onClick={() => {
-                  document
-                    .getElementById("sectors")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Ver cases por setor
-              </Button>
-
               <Link href="/calculadora">
                 <Button
                   size="lg"
