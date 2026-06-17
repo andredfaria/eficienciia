@@ -22,9 +22,6 @@ export function Footer() {
             <div className="text-xl md:text-2xl font-bold text-primary neon-text mb-3 md:mb-4">
               Eficienci IA
             </div>
-            <p className="text-muted-foreground text-sm md:text-base max-w-md">
-              IA sob medida, servidores de alta performance e automações inteligentes para gerar eficiência, previsibilidade e vantagem competitiva.
-            </p>
           </motion.div>
 
         </div>
