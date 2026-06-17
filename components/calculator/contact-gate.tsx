@@ -5,8 +5,9 @@ import { motion } from 'framer-motion';
 import { Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { formatHoras } from './format';
+import { formatBRL, formatHoras } from './format';
 import { isValidEmail, isValidBRPhone, maskBRPhone } from '@/lib/calculator/validate';
+import type { Estimate } from '@/lib/calculator';
 
 export interface ContactData {
   name: string;
@@ -16,12 +17,12 @@ export interface ContactData {
 }
 
 interface ContactGateProps {
-  horasLiberadasMes: number;
+  estimate: Estimate;
   isSubmitting: boolean;
   onSubmit: (data: ContactData) => void;
 }
 
-export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: ContactGateProps) {
+export function ContactGate({ estimate, isSubmitting, onSubmit }: ContactGateProps) {
   type FieldErrors = { name?: string; telefone?: string; email?: string };
   const [errors, setErrors] = useState<FieldErrors>({});
   const [telefone, setTelefone] = useState('');
@@ -53,19 +54,39 @@ export function ContactGate({ horasLiberadasMes, isSubmitting, onSubmit }: Conta
       animate={{ opacity: 1, y: 0 }}
       className="w-full"
     >
-      <div className="mb-6 rounded-lg border border-primary/30 bg-primary/5 p-5 text-center neon-ring">
-        <p className="text-sm text-muted-foreground">Identificamos cerca de</p>
-        <p className="my-1 text-3xl font-bold text-primary">
-          {formatHoras(horasLiberadasMes)}/mês
+      <div className="mb-6 rounded-lg border border-primary/30 bg-primary/5 p-5 neon-ring">
+        <p className="text-center text-sm text-muted-foreground">
+          Com base nas suas respostas, sua operação pode liberar cerca de
         </p>
-        <p className="text-sm text-muted-foreground">
-          que sua equipe gasta em tarefas automatizáveis.
+        <div className="my-3 grid grid-cols-3 gap-2 text-center">
+          <div>
+            <p className="text-lg md:text-2xl font-bold text-primary">
+              {formatHoras(estimate.horasLiberadasMes)}
+            </p>
+            <p className="text-xs text-muted-foreground">horas/mês</p>
+          </div>
+          <div>
+            <p className="text-lg md:text-2xl font-bold text-primary">
+              {formatHoras(estimate.horasLiberadasMes * 12)}
+            </p>
+            <p className="text-xs text-muted-foreground">horas/ano</p>
+          </div>
+          <div>
+            <p className="text-lg md:text-2xl font-bold text-primary">
+              {formatBRL(estimate.economiaAno)}
+            </p>
+            <p className="text-xs text-muted-foreground">economia/ano</p>
+          </div>
+        </div>
+        <p className="text-center text-sm text-muted-foreground">
+          em tarefas automatizáveis.
         </p>
       </div>
 
       <div className="mb-5 flex items-center gap-2 text-sm text-muted-foreground">
         <Lock className="h-4 w-4 text-primary" />
-        Deixe seu contato para liberar a economia em R$, o ROI estimado e a recomendação.
+        Deixe seu contato para receber o relatório completo em PDF: ROI estimado, payback e a
+        recomendação para o seu momento.
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-3">

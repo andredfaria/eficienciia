@@ -22,8 +22,8 @@ export default function CalculadoraPage() {
               Quanto sua operação pode economizar com automação?
             </h1>
             <p className="mx-auto max-w-2xl text-sm md:text-lg text-muted-foreground">
-              Responda 8 perguntas rápidas e receba uma estimativa de economia de tempo,
-              custo e ROI — com a recomendação certa para o seu momento.
+              São 8 perguntas rápidas. No final, você vê quanto dá pra economizar em
+              tempo e custo, o ROI estimado e qual caminho faz mais sentido pro seu momento.
             </p>
             <p className="mt-2 text-xs text-muted-foreground">≈ 2 minutos · sem compromisso</p>
           </div>

@@ -7,9 +7,12 @@ import { QUESTIONS } from './questions';
 import { QuestionStep } from './question-step';
 import { ContactGate, type ContactData } from './contact-gate';
 import { ResultView } from './result-view';
+import { RESULT_COPY, pillarLabel } from './result-content';
 
-const WEBHOOK_URL = 'https://n8n.eficienciia.com.br/webhook/salva-formulario';
+const WEBHOOK_URL = 'https://n8n.eficienciia.com.br/webhook/calculadora';
 const CONTACT_URL = '/#contact';
+// Link público da agenda do Google (Appointment schedules).
+const CALENDAR_URL = 'https://calendar.app.google/X6J4sz2SFLtK7LDs7';
 const WHATSAPP_URL =
   'https://wa.me/5535991404064?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20informações%20sobre%20a%20EFICIENCI%20IA,%20QUERO%20AUTOMATICAR%20MEU%20NEGOCIO';
 
@@ -42,24 +45,45 @@ export function Calculator() {
 
   const handleContactSubmit = async (contact: ContactData) => {
     setIsSubmitting(true);
-    const res = computeResult(answers as Answers);
+    const a = answers as Answers;
+    const res = computeResult(a);
+    const copy = RESULT_COPY[res.recommendation.reasonKey];
+
+    // Rótulos legíveis de cada resposta, para o n8n montar o PDF sem traduzir códigos.
+    const respostasLabels: Record<string, string> = {};
+    for (const q of QUESTIONS) {
+      const value = a[q.id] as string;
+      const opt = (q.options as ReadonlyArray<{ value: string; label: string }>).find(
+        (o) => o.value === value,
+      );
+      respostasLabels[q.id] = opt?.label ?? value;
+    }
+
     const payload = {
       ...contact,
       origem: 'calculadora-roi',
-      segmento: (answers as Answers).segment,
+      segmento: a.segment,
       respostas: answers,
+      respostas_labels: respostasLabels,
       lead_score: res.score,
       classificacao: res.recommendation.classification,
       recomendacao: res.recommendation.pillar,
+      recomendacao_label: pillarLabel(res.recommendation.pillar),
       motivo: res.recommendation.reasonKey,
       estimativas: {
+        fator: res.estimate.fator,
         economia_mes: Math.round(res.estimate.economiaMes),
         economia_ano: Math.round(res.estimate.economiaAno),
         horas_liberadas_mes: Math.round(res.estimate.horasLiberadasMes),
+        investimento_ref: res.financials.investimentoRef,
         payback_meses: Number.isFinite(res.financials.paybackMeses)
           ? Math.round(res.financials.paybackMeses)
           : null,
         roi_ano_pct: Math.round(res.financials.roiAnoPct),
+      },
+      relatorio: {
+        headline: copy.headline,
+        mensagem: copy.message,
       },
     };
     try {
@@ -79,8 +103,14 @@ export function Calculator() {
   const handleCtaClick = (kind: 'primary' | 'secondary') => {
     if (kind === 'secondary') {
       window.open(WHATSAPP_URL, '_blank');
-    } else {
+      return;
+    }
+    // CTA primário: cenários de venda (diagnóstico / primeiro passo) vão para a
+    // agenda do Google; "soluções prontas" (inicial) segue para o contato do site.
+    if (result?.recommendation.reasonKey === 'inicial') {
       window.location.href = CONTACT_URL;
+    } else {
+      window.open(CALENDAR_URL, '_blank');
     }
   };
 
@@ -101,7 +131,7 @@ export function Calculator() {
         {stage === 'gate' && result && (
           <ContactGate
             key="gate"
-            horasLiberadasMes={result.estimate.horasLiberadasMes}
+            estimate={result.estimate}
             isSubmitting={isSubmitting}
             onSubmit={handleContactSubmit}
           />

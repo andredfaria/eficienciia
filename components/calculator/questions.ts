@@ -102,7 +102,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 'maturity',
     title: 'Qual seu momento com automação?',
-    help: 'Sem julgamento — só para recomendar o passo certo.',
+    help: 'Sem julgamento, é só para recomendar o passo certo.',
     options: [
       { value: 'ja-automatizo', label: 'Já automatizo algo' },
       { value: 'quero-comecar', label: 'Quero começar' },
