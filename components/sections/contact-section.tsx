@@ -37,6 +37,9 @@ export function ContactSection() {
       if (response.ok) {
         setMessage("Mensagem enviada com sucesso! Entraremos em contato em breve.");
         (e.target as HTMLFormElement).reset();
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead');
+        }
       } else {
         setMessage("Erro ao enviar mensagem. Tente novamente.");
       }

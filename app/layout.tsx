@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster";
 import Script from 'next/script';
 import { GoogleAnalytics } from '@/components/seo/GoogleAnalytics';
+import { MetaPixel } from '@/components/seo/MetaPixel';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -94,6 +95,7 @@ export default function RootLayout({
         {children}
         <Toaster />
         <GoogleAnalytics />
+        <MetaPixel />
         <Script
           id="ld-json-organization"
           type="application/ld+json"

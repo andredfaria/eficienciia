@@ -96,6 +96,9 @@ export function Calculator() {
       // Não bloqueia a exibição do resultado se o webhook falhar.
     } finally {
       setIsSubmitting(false);
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Lead');
+      }
       setStage('result');
     }
   };
