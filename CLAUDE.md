@@ -22,7 +22,8 @@ This is a **Next.js 13 App Router** marketing site for Eficienci IA — an AI au
 
 ### Page structure
 
-- `app/page.tsx` — Main landing page, assembles section components top-to-bottom: `Header → HeroSection → ServicesSection → MethodologySection → ProblemSolutionSection → ContactSection → Footer`
+- `app/page.tsx` — Main landing page built from `components/home/` (one component per section, all copy in `components/home/content.ts`, tokens scoped under `.ef` in `globals.css`; light sections use `.ef-light`). See `README.md` for placeholders. The old `components/sections/*` + `components/header.tsx` are still used by inner pages (`/calculadora`, `/blog`, `/valores`, `/project`).
+- `app/privacidade/` — LGPD privacy policy (base text, pending legal review)
 - `app/blog/` — Blog pages that fetch content from an external n8n webhook API (`https://n8n.eficienciia.com.br/webhook/list-blog`), with 1-hour ISR revalidation
 - `app/valores/` and `app/project/` — Additional inner pages
 

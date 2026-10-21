@@ -140,7 +140,6 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
     { href: "#services", label: "Serviços", isHash: true },
     { href: "#methodology", label: "Metodologia", isHash: true },
     { href: "#solution", label: "Soluções", isHash: true },
-    { href: "/blog", label: "Blog", isHash: false },
     { href: "#contact", label: "Contato", isHash: true },
   ];
 

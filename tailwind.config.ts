@@ -9,6 +9,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+      },
+      transitionTimingFunction: {
+        expo: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -53,6 +60,28 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        // tokens da home (definidos em .ef no globals.css)
+        ink: {
+          DEFAULT: 'rgb(var(--ink-rgb) / <alpha-value>)',
+          2: 'var(--ink-2)',
+          line: 'var(--ink-line)',
+        },
+        ground: {
+          DEFAULT: 'var(--ground)',
+          2: 'var(--ground-2)',
+        },
+        surface: 'var(--surface)',
+        copy: 'var(--text)',
+        subtle: {
+          DEFAULT: 'var(--muted)',
+          dark: 'var(--muted-dark)',
+        },
+        brand: {
+          DEFAULT: 'rgb(var(--accent-rgb) / <alpha-value>)',
+          ink: 'var(--accent-ink)',
+          soft: 'var(--eyebrow-dark)',
+        },
+        line: 'var(--line)',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

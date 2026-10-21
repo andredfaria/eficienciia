@@ -13,6 +13,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0
     },
     {
+      url: `${siteUrl}/calculadora`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8
+    },
+    {
+      url: `${siteUrl}/privacidade`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
+      priority: 0.2
+    },
+    {
       url: `${siteUrl}/blog`,
       lastModified,
       changeFrequency: 'daily' as const,

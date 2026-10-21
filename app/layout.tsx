@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: 'Eficienci IA',
   title: {
-    default: 'Eficienci IA | Automatize seu negócio com IA',
+    default: 'Eficienci IA | Automação comercial com IA no WhatsApp',
     template: '%s | Eficienci IA'
   },
   description:
-    'Agentes de IA e automações para WhatsApp, e-mail e CRM. Integrações entre CRM e ERP, remarketing, coleta e estruturação de dados, dashboards e atendimento automático 24/7.',
+    'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 100, abatido na implementação.',
   keywords: [
     'agentes de IA',
     'agente autônomo',
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     type: 'website',
     url: siteUrl,
     siteName: 'Eficienci IA',
-    title: 'Eficienci IA | Automatize seu negócio com IA',
+    title: 'Eficienci IA | Automação comercial com IA no WhatsApp',
     description:
-      'Agentes de IA e automações para WhatsApp, e-mail e CRM. Integrações entre CRM e ERP, remarketing, coleta e estruturação de dados, dashboards e atendimento automático 24/7.',
+      'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 100, abatido na implementação.',
     locale: 'pt_BR',
     images: [
       {
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eficienci IA | Automatize seu negócio com IA',
+    title: 'Eficienci IA | Automação comercial com IA no WhatsApp',
     description:
-      'Agentes de IA e automações para WhatsApp, e-mail e CRM. Integrações entre CRM e ERP, remarketing, coleta e estruturação de dados, dashboards e atendimento automático 24/7.',
+      'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 100, abatido na implementação.',
     images: ['/hero-illustration.png']
   },
   robots: {
@@ -90,8 +90,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="dark scroll-smooth overflow-x-hidden">
-      <body className={`${inter.className} antialiased overflow-x-hidden selection:bg-primary/20 selection:text-foreground`}>
+    <html lang="pt-BR" className="dark scroll-smooth">
+      <body className={`${inter.className} antialiased selection:bg-primary/20 selection:text-foreground`}>
         {children}
         <Toaster />
         <GoogleAnalytics />

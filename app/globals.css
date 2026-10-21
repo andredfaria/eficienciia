@@ -81,7 +81,14 @@
     @apply border-border;
   }
   html, body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground;
+  }
+  /* overflow-x só no html (propaga para o viewport); no body usa clip para não quebrar position: sticky */
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: clip;
   }
 }
 
@@ -139,5 +146,192 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Home "sala de controle comercial" — tokens escopados em .ef para não
+   colidir com as variáveis HSL do shadcn usadas nas outras páginas.
+------------------------------------------------------------------- */
+.ef {
+  --ink: #0B1220;
+  --ink-2: #111A2E;
+  --ink-line: #22304A;
+  --ground: #F5F7FA;
+  --ground-2: #EAF0F5;
+  --surface: #FFFFFF;
+  --text: #0F172A;
+  --muted: #475569;
+  --muted-dark: #B7C4D4;
+  --accent: #22D3EE;
+  --accent-ink: #0E7490;
+  --line: #E2E8F0;
+  --eyebrow-dark: #A5F3FC;
+  /* canais RGB para os modificadores de opacidade do Tailwind (bg-ink/85, bg-brand/15…) */
+  --ink-rgb: 11 18 32;
+  --accent-rgb: 34 211 238;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --focus: var(--accent);
+
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #fff;
+  background: var(--ink);
+  overflow-x: clip;
+}
+.ef .ef-light {
+  --focus: var(--accent-ink);
+  color: var(--text);
+}
+.ef :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.ef section[id] {
+  scroll-margin-top: 72px;
+}
+.ef section[tabindex='-1']:focus {
+  outline: none;
+}
+.ef .ef-noscroll {
+  scrollbar-width: none;
+}
+.ef .ef-noscroll::-webkit-scrollbar {
+  display: none;
+}
+.ef .ef-h1,
+.ef .ef-h2,
+.ef .ef-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+.ef .ef-h1 {
+  font-size: clamp(40px, 5.4vw, 72px);
+  line-height: 1.02;
+}
+.ef .ef-h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.06;
+  font-weight: 700;
+}
+.ef .ef-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--eyebrow-dark);
+}
+.ef .ef-light .ef-eyebrow {
+  color: var(--accent-ink);
+}
+.ef .ef-section {
+  padding-block: 72px;
+}
+@media (min-width: 768px) {
+  .ef .ef-section {
+    padding-block: 104px;
+  }
+}
+.ef .ef-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Entrada do hero em CSS: o texto fica legível mesmo se o JS falhar */
+/* começa em 0.01 (não 0): o texto já conta como pintado para o LCP, mas fica imperceptível com o blur */
+@keyframes ef-word {
+  from { opacity: 0.01; transform: translateY(14px); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+@keyframes ef-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes ef-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.ef .ef-word {
+  display: inline-block;
+  animation: ef-word 0.7s var(--ease) both;
+  animation-delay: calc(var(--i) * 50ms);
+}
+.ef .ef-rise {
+  animation: ef-rise 0.7s var(--ease) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes ef-pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+.ef .ef-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--accent);
+  animation: ef-pulse 1.8s var(--ease) infinite;
+}
+
+@keyframes ef-typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-3px); opacity: 1; }
+}
+.ef .ef-typing span {
+  animation: ef-typing 1s ease-in-out infinite;
+}
+.ef .ef-typing span:nth-child(2) { animation-delay: 0.15s; }
+.ef .ef-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+/* Brilho que percorre a borda do card de diagnóstico */
+@keyframes ef-spin {
+  to { transform: rotate(360deg); }
+}
+.ef .ef-glow-border {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.ef .ef-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -60%;
+  z-index: -2;
+  background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, rgba(34, 211, 238, 0.9) 330deg, transparent 360deg);
+  animation: ef-spin 7s linear infinite;
+  animation-play-state: var(--glow-state, running);
+}
+.ef .ef-glow-border::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--ink-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ef .ef-word,
+  .ef .ef-rise {
+    animation: ef-fade 150ms linear both;
+    animation-delay: 0ms;
+  }
+  .ef .ef-pulse::after,
+  .ef .ef-typing span,
+  .ef .ef-glow-border::before {
+    animation: none;
+  }
+  .ef .ef-glow-border::before {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
   }
 }
