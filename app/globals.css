@@ -49,26 +49,26 @@
   }
   .dark {
     /* Dark theme: tech, minimal, neon */
-    --background: 222 40% 6%;      /* deep blue-gray */
+    --background: 222 49% 8%;      /* = --ink #0B1220 */
     --foreground: 210 40% 96%;     /* near-white */
-    --card: 222 37% 8%;
+    --card: 222 46% 12%;           /* = --ink-2 #111A2E */
     --card-foreground: 210 40% 96%;
-    --popover: 222 37% 8%;
+    --popover: 222 46% 12%;
     --popover-foreground: 210 40% 96%;
-    --primary: 190 95% 62%;        /* neon cyan */
+    --primary: 188 86% 53%;        /* = --accent #22D3EE */
     --primary-foreground: 222 40% 6%;
     --secondary: 198 32% 78%;      /* #B6CCD7 */
     --secondary-foreground: 222 40% 8%;
     --muted: 220 28% 14%;
-    --muted-foreground: 220 12% 62%;
+    --muted-foreground: 213 25% 77%; /* = --muted-dark #B7C4D4 */
     --accent: 220 28% 14%;
     --accent-foreground: 210 40% 96%;
     --destructive: 0 62% 40%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 16% 18%;
-    --input: 220 16% 18%;
-    --ring: 190 95% 62%;
-    --chart-1: 190 95% 62%;
+    --border: 218 37% 21%;         /* = --ink-line #22304A */
+    --input: 218 37% 21%;
+    --ring: 188 86% 53%;
+    --chart-1: 188 86% 53%;
     --chart-2: 198 32% 78%;
     --chart-3: 262 83% 58%;
     --chart-4: 142 71% 45%;

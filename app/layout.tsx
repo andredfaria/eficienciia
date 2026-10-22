@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: 'Eficienci IA',
   title: {
-    default: 'Eficienci IA | Automação comercial com IA no WhatsApp',
+    default: 'Eficienci IA | Consultoria e automação com IA para empresas',
     template: '%s | Eficienci IA'
   },
   description:
-    'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 100, abatido na implementação.',
+    'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 100.',
   keywords: [
     'agentes de IA',
     'agente autônomo',
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     type: 'website',
     url: siteUrl,
     siteName: 'Eficienci IA',
-    title: 'Eficienci IA | Automação comercial com IA no WhatsApp',
+    title: 'Eficienci IA | Consultoria e automação com IA para empresas',
     description:
-      'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 100, abatido na implementação.',
+      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 100.',
     locale: 'pt_BR',
     images: [
       {
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eficienci IA | Automação comercial com IA no WhatsApp',
+    title: 'Eficienci IA | Consultoria e automação com IA para empresas',
     description:
-      'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 100, abatido na implementação.',
+      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 100.',
     images: ['/hero-illustration.png']
   },
   robots: {
@@ -91,7 +91,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="dark scroll-smooth">
-      <body className={`${inter.className} antialiased selection:bg-primary/20 selection:text-foreground`}>
+      <body className={`${inter.className} ${inter.variable} antialiased selection:bg-primary/20 selection:text-foreground`}>
         {children}
         <Toaster />
         <GoogleAnalytics />

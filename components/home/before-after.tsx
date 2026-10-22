@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CircleCheck, CircleX } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { beforeAfter } from './content';
+import { useContent } from './content-context';
 import { Container, EASE, Reveal, useReduced } from './primitives';
 
 export function BeforeAfter() {
+  const { beforeAfter } = useContent();
   const reduced = useReduced();
   const [modeId, setModeId] = useState(beforeAfter.modes[0].id);
   const mode = beforeAfter.modes.find((m) => m.id === modeId)!;

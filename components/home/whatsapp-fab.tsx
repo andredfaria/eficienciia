@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
-import { fab, whatsappHref } from './content';
+import { fab, whatsappHref } from './content/shared';
 import { EASE, useReduced } from './primitives';
 import { track } from './track';
 

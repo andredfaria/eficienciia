@@ -5,10 +5,11 @@ import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { testimonials } from './content';
+import { useContent } from './content-context';
 import { Container, Eyebrow, Reveal, Stagger, StaggerItem, useFinePointer, useReduced } from './primitives';
 
 export function Testimonials() {
+  const { testimonials } = useContent();
   const trackRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
   const items = testimonials.items;

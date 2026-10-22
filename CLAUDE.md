@@ -22,7 +22,8 @@ This is a **Next.js 13 App Router** marketing site for Eficienci IA — an AI au
 
 ### Page structure
 
-- `app/page.tsx` — Main landing page built from `components/home/` (one component per section, all copy in `components/home/content.ts`, tokens scoped under `.ef` in `globals.css`; light sections use `.ef-light`). See `README.md` for placeholders. The old `components/sections/*` + `components/header.tsx` are still used by inner pages (`/calculadora`, `/blog`, `/valores`, `/project`).
+- Landing pages: `/` (geral), `/automacao-whatsapp`, `/automacao-crm`, `/automacao-processos`. All render `components/home/landing-page.tsx` with a different content object from `components/home/content/*.ts` (shape in `content/types.ts`, shared bits in `content/shared.ts`); components read it via `useContent()`. Tokens are scoped under `.ef` in `globals.css`; light sections use `.ef-light`. See `README.md`.
+- Inner pages (`/calculadora`, `/blog`, `/valores`, `/project`, `/privacidade`) use the same header/footer via `components/home/site-chrome.tsx` (`SiteHeader`/`SiteFooter`).
 - `app/privacidade/` — LGPD privacy policy (base text, pending legal review)
 - `app/blog/` — Blog pages that fetch content from an external n8n webhook API (`https://n8n.eficienciia.com.br/webhook/list-blog`), with 1-hour ISR revalidation
 - `app/valores/` and `app/project/` — Additional inner pages

@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useInView } from 'framer-motion';
-import { proof } from './content';
+import { useContent } from './content-context';
 import { Container, EASE, Stagger, StaggerItem, useReduced } from './primitives';
 
 export function ProofBar() {
+  const { proof } = useContent();
   return (
     <section aria-label="Resultados em números" className="bg-ink pb-16 md:pb-20">
       <Container>

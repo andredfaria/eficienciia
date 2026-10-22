@@ -4,11 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { leaks } from './content';
+import { useContent } from './content-context';
 import { useLead } from './lead-context';
 import { Container, CtaLink, EASE, Eyebrow, Stagger, StaggerItem, useIsDesktop, useReduced } from './primitives';
 
 export function Leaks() {
+  const { leaks } = useContent();
   const desktop = useIsDesktop();
   const reduced = useReduced();
   const scrolly = desktop && !reduced;
@@ -116,7 +117,7 @@ export function Leaks() {
                 className="mt-6 flex flex-col gap-4 rounded-[24px] bg-ink p-6 text-white sm:flex-row sm:items-center sm:justify-between md:p-7"
                 role="status"
               >
-                <p className="font-display text-[22px] font-bold leading-tight tracking-[-0.02em]">{leaks.result(marked.length)}</p>
+                <p className="font-display text-[22px] font-bold leading-tight tracking-[-0.02em]">{leaks.result.replace('{n}', String(marked.length))}</p>
                 <CtaLink href="#contato" location="leaks" arrow className="shrink-0">
                   {leaks.resultCta}
                 </CtaLink>

@@ -1,11 +1,11 @@
-import { Header } from '@/components/header';
-import { Footer } from '@/components/sections/footer';
+import { SiteHeader as Header } from '@/components/home/site-chrome';
+import { SiteFooter as Footer } from '@/components/home/site-chrome';
 import { BlogCard } from '@/components/blog/blog-card';
 import { fetchBlogPosts } from '@/lib/blog';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Blog | Eficienci IA",
+  title: "Blog",
   description:
     "Artigos sobre IA, automação, tecnologia e inovação. Mantenha-se atualizado com as últimas tendências em inteligência artificial e automação de processos.",
   keywords: [

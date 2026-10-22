@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
 import { ArrowUp, Compass, Ear, RefreshCw, TrendingUp, Workflow, type LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { method } from './content';
+import { useContent } from './content-context';
 import { Container, EASE, Eyebrow, Stagger, StaggerItem, useMediaQuery, useReduced } from './primitives';
 
 const ICONS: LucideIcon[] = [Ear, Compass, Workflow, TrendingUp];
@@ -23,6 +23,7 @@ export function Method() {
 }
 
 function Header({ compact = false }: { compact?: boolean }) {
+  const { method } = useContent();
   return (
     <div className={cn('grid gap-6', compact && 'md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-12')}>
       <div>
@@ -41,6 +42,7 @@ function Header({ compact = false }: { compact?: boolean }) {
 /* ---------------- desktop: seção fixada, linha ligada ao scroll ---------------- */
 
 function PinnedSteps() {
+  const { method } = useContent();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
   const line = useTransform(scrollYProgress, [0.05, 0.8], [0, 1]);
@@ -110,6 +112,7 @@ function PinnedStep({ index, title, text, on }: { index: number; title: string; 
 }
 
 function LoopArrow({ show }: { show: boolean }) {
+  const { method } = useContent();
   return (
     <div className="relative mt-4 h-[64px]" aria-hidden>
       <svg className="absolute inset-0 h-full w-full overflow-visible" viewBox="0 0 1000 64" preserveAspectRatio="none" fill="none">
@@ -147,6 +150,7 @@ function LoopArrow({ show }: { show: boolean }) {
 /* ---------------- mobile / reduced motion: timeline vertical ---------------- */
 
 function StaticSteps({ animated }: { animated: boolean }) {
+  const { method } = useContent();
   const listRef = useRef<HTMLOListElement>(null);
   const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 75%', 'end 60%'] });
 

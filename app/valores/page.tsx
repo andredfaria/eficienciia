@@ -1,7 +1,7 @@
-import { Header } from '@/components/header';
+import { SiteHeader as Header } from '@/components/home/site-chrome';
 import { BrandValuesSection } from '@/components/sections/brand-values-section';
 import { ContactSection } from '@/components/sections/contact-section';
-import { Footer } from '@/components/sections/footer';
+import { SiteFooter as Footer } from '@/components/home/site-chrome';
 
 export default function ValoresPage() {
   return (

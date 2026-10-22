@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { fontVars } from '@/components/home/fonts';
-import { site } from '@/components/home/content';
-import { Container, Logo } from '@/components/home/primitives';
+import { site } from '@/components/home/content/shared';
+import { Container } from '@/components/home/primitives';
+import { Nav } from '@/components/home/nav';
 import { Footer } from '@/components/home/footer';
 
 export const metadata: Metadata = {
@@ -54,14 +54,8 @@ const sections = [
 export default function PrivacidadePage() {
   return (
     <div className={`ef ${fontVars}`}>
-      <header className="border-b border-ink-line bg-ink">
-        <Container className="flex h-[68px] items-center">
-          <Link href="/" aria-label="Eficienci IA, voltar ao início" className="text-white">
-            <Logo />
-          </Link>
-        </Container>
-      </header>
-      <main className="ef-light bg-surface py-16 md:py-24">
+      <Nav anchorBase="/" />
+      <main className="ef-light bg-surface pb-16 pt-[132px] md:pb-24 md:pt-[164px]">
         <Container className="max-w-[820px]">
           <p className="mb-6 inline-flex rounded-full border border-dashed border-[#94A3B8] px-3 py-1 text-[13px] font-semibold text-subtle">
             Texto base em revisão jurídica

@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 1.0
     },
+    ...['/automacao-whatsapp', '/automacao-crm', '/automacao-processos'].map((path) => ({
+      url: `${siteUrl}${path}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9
+    })),
     {
       url: `${siteUrl}/calculadora`,
       lastModified,

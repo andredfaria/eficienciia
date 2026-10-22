@@ -2,12 +2,16 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Check } from 'lucide-react';
+import { track } from './track';
 import { cn } from '@/lib/utils';
-import { solutions, type SolutionAnim } from './content';
+import { useContent } from './content-context';
+import type { SolutionAnim } from './content/types';
 import { Container, EASE, Eyebrow, Reveal, Stagger, StaggerItem, useFinePointer, useReduced } from './primitives';
 
 export function Solutions() {
+  const { solutions } = useContent();
   return (
     <section aria-labelledby="solutions-title" className="ef-light ef-section border-t border-line bg-ground">
       <Container>
@@ -29,7 +33,21 @@ export function Solutions() {
   );
 }
 
-function SolutionCard({ title, text, result, anim }: { title: string; text: string; result: string; anim: SolutionAnim }) {
+function SolutionCard({
+  title,
+  text,
+  result,
+  anim,
+  href,
+  linkLabel,
+}: {
+  title: string;
+  text: string;
+  result: string;
+  anim: SolutionAnim;
+  href?: string;
+  linkLabel?: string;
+}) {
   const fine = useFinePointer();
   const reduced = useReduced();
   // a micro-animação roda ao entrar na tela e de novo a cada hover (remontando pela key)
@@ -64,6 +82,16 @@ function SolutionCard({ title, text, result, anim }: { title: string; text: stri
       <h3 className="relative font-display text-[22px] font-bold leading-tight tracking-[-0.02em] text-copy">{title}</h3>
       <p className="relative mt-2 flex-1 text-[16px] text-subtle">{text}</p>
       <p className="relative mt-5 border-t border-line pt-4 text-[15px] font-bold text-copy">{result}</p>
+      {href && (
+        <Link
+          href={href}
+          onClick={() => track('cta_click', { location: `solutions_${anim}` })}
+          className="relative mt-3 inline-flex min-h-[44px] items-center gap-1.5 self-start text-[15px] font-bold text-brand-ink underline-offset-4 hover:underline"
+        >
+          {linkLabel}
+          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2} aria-hidden />
+        </Link>
+      )}
     </motion.article>
   );
 }

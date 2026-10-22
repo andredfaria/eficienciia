@@ -1,5 +1,5 @@
-import { Header } from '@/components/header';
-import { Footer } from '@/components/sections/footer';
+import { SiteHeader as Header } from '@/components/home/site-chrome';
+import { SiteFooter as Footer } from '@/components/home/site-chrome';
 import { ProjectsSection } from '@/components/sections/projects-section';
 import { Metadata } from 'next';
 

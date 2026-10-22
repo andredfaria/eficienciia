@@ -3,10 +3,12 @@
 import { useRef, type CSSProperties } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Calculator } from 'lucide-react';
-import { offer, site } from './content';
+import { useContent } from './content-context';
+import { site } from './content/shared';
 import { Container, CtaLink, DrawCheck, EASE, Eyebrow, Reveal, Stagger, StaggerItem, useReduced } from './primitives';
 
 export function Offer() {
+  const { offer } = useContent();
   const reduced = useReduced();
   const gridRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);

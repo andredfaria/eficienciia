@@ -193,14 +193,17 @@ export function CtaLink({
 
 /* ---------------- ícones ---------------- */
 
+/** Logo da marca: o wordmark em degradê ciano → azul-acinzentado com brilho, igual ao site anterior. */
 export function Logo({ className }: { className?: string }) {
   return (
-    <span className={cn('inline-flex items-center gap-2.5 font-display text-[19px] font-bold tracking-[-0.02em]', className)}>
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <rect x="1" y="1" width="26" height="26" rx="8" stroke="#22D3EE" strokeWidth="2" />
-        <path d="M8.5 14.5l3.5 3.5 7.5-8" stroke="#22D3EE" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      Eficienci IA
+    <span
+      className={cn('inline-block text-[24px] font-bold leading-none tracking-[-0.02em]', className)}
+      style={{
+        fontFamily: 'var(--font-inter), system-ui, sans-serif',
+        textShadow: '0 0 6px hsl(190 95% 62% / 0.8), 0 0 14px hsl(190 95% 62% / 0.45), 0 0 28px hsl(190 95% 62% / 0.25)',
+      }}
+    >
+      <span className="bg-gradient-to-r from-[hsl(190,95%,62%)] to-[hsl(198,32%,78%)] bg-clip-text text-transparent">Eficienci IA</span>
     </span>
   );
 }

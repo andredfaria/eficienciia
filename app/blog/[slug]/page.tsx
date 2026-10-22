@@ -1,5 +1,5 @@
-import { Header } from '@/components/header';
-import { Footer } from '@/components/sections/footer';
+import { SiteHeader as Header } from '@/components/home/site-chrome';
+import { SiteFooter as Footer } from '@/components/home/site-chrome';
 import { BlogPost } from '@/components/blog/blog-post';
 import { getPostBySlug, generateSlug, getAllPostSlugs } from '@/lib/blog';
 import { Metadata } from 'next';
@@ -23,14 +23,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!post) {
     return {
-      title: 'Post não encontrado | Eficienci IA',
+      title: 'Post não encontrado',
     };
   }
 
   const excerpt = post.content?.substring(0, 160) || post.raw_content?.substring(0, 160) || '';
 
   return {
-    title: `${post.title} | Eficienci IA`,
+    title: post.title,
     description: excerpt,
     keywords: [
       'IA',

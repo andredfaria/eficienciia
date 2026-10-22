@@ -2,11 +2,12 @@
 
 import { Fragment, useRef, type CSSProperties } from 'react';
 import { useMotionValue, useScroll, useSpring } from 'framer-motion';
-import { hero } from './content';
+import { useContent } from './content-context';
 import { HeroDemo } from './hero-demo';
 import { Container, CtaLink, useFinePointer, useReduced } from './primitives';
 
 export function Hero() {
+  const { hero } = useContent();
   const ref = useRef<HTMLElement>(null);
   const fine = useFinePointer();
   const reduced = useReduced();

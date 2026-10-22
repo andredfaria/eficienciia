@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
-import { faq } from './content';
+import { useContent } from './content-context';
 import { Container, EASE, Reveal, useReduced } from './primitives';
 
 export function Faq() {
+  const { faq } = useContent();
   const reduced = useReduced();
   const [open, setOpen] = useState<number[]>([0]);
   const toggle = (i: number) => setOpen((o) => (o.includes(i) ? o.filter((x) => x !== i) : [...o, i]));

@@ -1,10 +1,11 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { fit } from './content';
+import { useContent } from './content-context';
 import { Container, DrawCheck, Stagger, StaggerItem } from './primitives';
 
 export function Fit() {
+  const { fit } = useContent();
   return (
     <section aria-label="Para quem é" className="ef-light ef-section border-t border-line bg-ground">
       <Container className="grid gap-4 md:grid-cols-[1.25fr_1fr] md:gap-6">

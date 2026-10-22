@@ -6,21 +6,23 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Loader2, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { isValidBRPhone, maskBRPhone } from '@/lib/calculator/validate';
-import { finalCta, leaks, site, whatsappHref } from './content';
+import { useContent } from './content-context';
+import { site, whatsappHref } from './content/shared';
 import { useLead } from './lead-context';
 import { Container, CtaLink, DrawCheck, EASE, Reveal, Stagger, StaggerItem, useReduced } from './primitives';
 import { track } from './track';
 
-const f = finalCta.form;
 type Field = 'name' | 'phone' | 'company' | 'lgpd';
 type Errors = Partial<Record<Field, string>>;
 
 const PRIVACY = 'Política de Privacidade';
-const [lgpdBefore, lgpdAfter] = f.lgpd.split(PRIVACY);
 
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
 
 export function FinalCta() {
+  const { finalCta, leaks, slug } = useContent();
+  const f = finalCta.form;
+  const [lgpdBefore, lgpdAfter] = f.lgpd.split(PRIVACY);
   const reduced = useReduced();
   const { marked } = useLead();
   const formRef = useRef<HTMLFormElement>(null);
@@ -67,6 +69,8 @@ export function FinalCta() {
     const utms = Object.fromEntries(UTM_KEYS.filter((k) => params.get(k)).map((k) => [k, params.get(k)]));
     const payload = {
       origem: 'home-diagnostico',
+      landing: slug,
+      respostas: { [f.team]: values.team, [f.source]: values.source },
       nome: values.name.trim(),
       whatsapp: values.phone,
       empresa: values.company.trim(),
@@ -180,8 +184,8 @@ export function FinalCta() {
                     onChange={(v) => set('company', v)}
                     onBlur={() => blur('company')}
                   />
-                  <SelectField name="team" label={f.team} options={f.teamOptions} value={values.team} onChange={(v) => set('team', v)} />
-                  <SelectField name="source" label={f.source} options={f.sourceOptions} value={values.source} onChange={(v) => set('source', v)} />
+                  <SelectField name="team" label={f.team} placeholder={f.selectPlaceholder} options={f.teamOptions} value={values.team} onChange={(v) => set('team', v)} />
+                  <SelectField name="source" label={f.source} placeholder={f.selectPlaceholder} options={f.sourceOptions} value={values.source} onChange={(v) => set('source', v)} />
 
                   <div>
                     <label className="flex cursor-pointer gap-3 text-[14px] leading-[1.5] text-subtle">
@@ -324,12 +328,14 @@ function TextField({
 function SelectField({
   name,
   label,
+  placeholder,
   options,
   value,
   onChange,
 }: {
   name: string;
   label: string;
+  placeholder: string;
   options: string[];
   value: string;
   onChange: (v: string) => void;
@@ -348,7 +354,7 @@ function SelectField({
           onChange={(e) => onChange(e.target.value)}
           className={cn(inputBase, 'appearance-none border-[#CBD5E1] pr-10 focus:border-brand-ink', !value && 'text-[#64748B]')}
         >
-          <option value="">{f.selectPlaceholder}</option>
+          <option value="">{placeholder}</option>
           {options.map((o) => (
             <option key={o} value={o} className="text-copy">
               {o}

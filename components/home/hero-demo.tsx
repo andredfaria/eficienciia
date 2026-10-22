@@ -4,10 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useTransform, type MotionValue } from 'framer-motion';
 import { Database } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { hero } from './content';
+import { useContent } from './content-context';
 import { EASE, useReduced } from './primitives';
-
-const demo = hero.demo;
 
 /*
   Linha do tempo da demonstração (≈7 s). Cada passo espera DELAYS[passo] antes de avançar.
@@ -21,6 +19,7 @@ const LAST = 12;
 const DELAYS = [900, 700, 1000, 700, 600, 1000, 700, 600, 450, 380, 380, 380, 4400];
 
 export function HeroDemo({ mx, my, scrollProgress }: { mx: MotionValue<number>; my: MotionValue<number>; scrollProgress: MotionValue<number> }) {
+  const demo = useContent().hero.demo;
   const reduced = useReduced();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { amount: 0.3 });
