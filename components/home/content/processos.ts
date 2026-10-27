@@ -8,12 +8,12 @@ export const processos: LandingContent = {
   seo: {
     title: 'Eficienci IA | Automação de processos internos com IA',
     description:
-      'Automatize lançamentos, conferências, relatórios e cópia de dados entre sistemas. Diagnóstico por R$ 100, abatido na implementação.',
+      'Automatize lançamentos, conferências, relatórios e cópia de dados entre sistemas. Diagnóstico por R$ 160, abatido na implementação.',
   },
   service: {
     name: 'Automação de processos internos com IA',
     description:
-      'Agentes de IA e integrações que eliminam tarefas manuais repetitivas: lançamento de dados, conferência de documentos, relatórios automáticos e rotinas entre sistemas. Começa com um diagnóstico de R$ 100, abatido na implementação.',
+      'Agentes de IA e integrações que eliminam tarefas manuais repetitivas: lançamento de dados, conferência de documentos, relatórios automáticos e rotinas entre sistemas. Começa com um diagnóstico de R$ 160, abatido na implementação.',
   },
 
   hero: {
@@ -23,7 +23,7 @@ export const processos: LandingContent = {
       'Agentes de IA que lançam dados, conferem documentos, geram relatórios e conectam seus sistemas. Seu time para de copiar e colar e volta para o que gera resultado.',
     primary: { href: '#contato', label: 'Quero meu diagnóstico' },
     secondary: { href: '/calculadora', label: 'Calcular quanto posso economizar' },
-    micro: ['R$ 100, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
+    micro: ['R$ 160, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
     demo: {
       header: 'Assistente interno · Financeiro',
       status: 'online agora',
@@ -227,7 +227,7 @@ export const processos: LandingContent = {
     title: 'Descubra quantas horas sua operação pode ganhar por mês.',
     support: 'Em uma conversa de mapeamento, mostramos o que dá para automatizar e quanto isso vale para a sua empresa.',
     checks: [
-      'Diagnóstico por R$ 100, abatido na implementação',
+      'Diagnóstico por R$ 160, abatido na implementação',
       'Devolução garantida se não acharmos 5 horas por mês para automatizar',
       'Plano com valor e prazo fechados, sem compromisso de seguir',
     ],

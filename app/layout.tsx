@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Eficienci IA'
   },
   description:
-    'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 100.',
+    'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 160.',
   keywords: [
     'agentes de IA',
     'agente autônomo',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: 'Eficienci IA',
     title: 'Eficienci IA | Consultoria e automação com IA para empresas',
     description:
-      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 100.',
+      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 160.',
     locale: 'pt_BR',
     images: [
       {
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Eficienci IA | Consultoria e automação com IA para empresas',
     description:
-      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 100.',
+      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 160.',
     images: ['/hero-illustration.png']
   },
   robots: {

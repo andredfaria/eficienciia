@@ -8,12 +8,12 @@ export const geral: LandingContent = {
   seo: {
     title: 'Eficienci IA | Consultoria e automação com IA para empresas',
     description:
-      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 100.',
+      'Identificamos onde a IA gera mais retorno no seu negócio e implementamos: atendimento no WhatsApp, CRM automático e processos internos sem trabalho manual. Diagnóstico por R$ 160.',
   },
   service: {
     name: 'Consultoria e implementação de automação com IA',
     description:
-      'Diagnóstico do negócio, plano priorizado por retorno e implementação de agentes de IA e automações em atendimento, CRM e processos internos. Diagnóstico de R$ 100, abatido na implementação.',
+      'Diagnóstico do negócio, plano priorizado por retorno e implementação de agentes de IA e automações em atendimento, CRM e processos internos. Diagnóstico de R$ 160, abatido na implementação.',
   },
 
   hero: {
@@ -23,7 +23,7 @@ export const geral: LandingContent = {
       'Identificamos as melhores oportunidades de automação no seu negócio e implementamos soluções de IA com foco em eficiência, escala e retorno mensurável. Atendimento, vendas e processos internos funcionando sem depender de trabalho manual.',
     primary: { href: '#contato', label: 'Quero meu diagnóstico' },
     secondary: { href: '/calculadora', label: 'Calcular minha economia' },
-    micro: ['R$ 100, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
+    micro: ['R$ 160, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
     demo: {
       header: 'Assistente · Sua empresa',
       status: 'online agora',
@@ -238,7 +238,7 @@ export const geral: LandingContent = {
     title: 'Descubra onde a IA gera mais retorno no seu negócio.',
     support: 'Em uma conversa de mapeamento, mostramos o que dá para automatizar e quanto isso vale para a sua empresa.',
     checks: [
-      'Diagnóstico por R$ 100, abatido na implementação',
+      'Diagnóstico por R$ 160, abatido na implementação',
       'Devolução garantida se não acharmos 5 horas por mês para automatizar',
       'Plano com valor e prazo fechados, sem compromisso de seguir',
     ],

@@ -66,7 +66,7 @@ export function LandingPage({ content }: { content: LandingContent }) {
         name={content.service.name}
         description={content.service.description}
         url={content.path === '/' ? '/#oferta' : `${content.path}#oferta`}
-        price="100"
+        price="160"
       />
       <FaqStructuredData questions={content.faq.items.map((i) => ({ question: i.q, answer: i.a }))} />
       {/* sem JS, nada fica escondido esperando animação */}

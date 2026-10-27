@@ -40,7 +40,7 @@ export const nav = {
     { href: '#oferta', label: 'Investimento' },
     { href: '#faq', label: 'Dúvidas' },
   ],
-  cta: { href: '#contato', label: 'Diagnóstico por R$ 100' },
+  cta: { href: '#contato', label: 'Diagnóstico por R$ 160' },
 };
 
 export const proof = {
@@ -61,7 +61,7 @@ export const offer = {
     step: 'Passo 1',
     title: 'Diagnóstico',
     badge: 'Comece aqui',
-    price: 'R$ 100',
+    price: 'R$ 160',
     priceNote: '100% abatido se você seguir com a implementação',
     items: [
       'Reunião de mapeamento com você e o time',
@@ -99,7 +99,7 @@ export const offer = {
   ],
   guarantee: {
     title: 'Garantia do diagnóstico',
-    text: 'Se não encontrarmos pelo menos 5 horas por mês que podem ser automatizadas na sua operação, devolvemos seus R$ 100.',
+    text: 'Se não encontrarmos pelo menos 5 horas por mês que podem ser automatizadas na sua operação, devolvemos seus R$ 160.',
   },
   calculator: {
     text: 'Quer uma estimativa antes? Responda 8 perguntas em 2 minutos.',

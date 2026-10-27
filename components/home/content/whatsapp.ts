@@ -8,12 +8,12 @@ export const whatsapp: LandingContent = {
   seo: {
     title: 'Eficienci IA | Automação comercial com IA no WhatsApp',
     description:
-      'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 100, abatido na implementação.',
+      'Agentes de IA que respondem cada lead na hora, fazem follow-up e atualizam o CRM. Diagnóstico comercial por R$ 160, abatido na implementação.',
   },
   service: {
     name: 'Automação comercial com IA no WhatsApp',
     description:
-      'Agentes de IA que atendem e qualificam leads no WhatsApp 24/7, fazem follow-up automático e registram tudo no CRM. Começa com um diagnóstico comercial de R$ 100, abatido na implementação.',
+      'Agentes de IA que atendem e qualificam leads no WhatsApp 24/7, fazem follow-up automático e registram tudo no CRM. Começa com um diagnóstico comercial de R$ 160, abatido na implementação.',
   },
 
   hero: {
@@ -23,7 +23,7 @@ export const whatsapp: LandingContent = {
       'Agentes de IA que respondem cada lead na hora, fazem o follow-up que ninguém lembra de fazer e registram tudo no CRM. Sua empresa vende mais sem contratar mais vendedor.',
     primary: { href: '#contato', label: 'Quero meu diagnóstico' },
     secondary: { href: '/calculadora', label: 'Calcular quanto estou perdendo' },
-    micro: ['R$ 100, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
+    micro: ['R$ 160, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
     demo: {
       header: 'Atendimento · Sua empresa',
       status: 'online agora',
@@ -187,7 +187,7 @@ export const whatsapp: LandingContent = {
     ],
     guarantee: {
       ...offer.guarantee,
-      text: 'Se não encontrarmos pelo menos 5 horas por mês que podem ser automatizadas no seu comercial, devolvemos seus R$ 100.',
+      text: 'Se não encontrarmos pelo menos 5 horas por mês que podem ser automatizadas no seu comercial, devolvemos seus R$ 160.',
     },
   },
 
@@ -253,7 +253,7 @@ export const whatsapp: LandingContent = {
     support:
       'Em uma conversa de mapeamento, mostramos o que dá para automatizar e quanto isso vale para o seu negócio.',
     checks: [
-      'Diagnóstico por R$ 100, abatido na implementação',
+      'Diagnóstico por R$ 160, abatido na implementação',
       'Devolução garantida se não acharmos 5 horas por mês para automatizar',
       'Plano com valor e prazo fechados, sem compromisso de seguir',
     ],

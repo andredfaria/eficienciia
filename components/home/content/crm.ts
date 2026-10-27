@@ -8,12 +8,12 @@ export const crm: LandingContent = {
   seo: {
     title: 'Eficienci IA | Automação de CRM e gestão de leads com IA',
     description:
-      'CRM que se preenche sozinho, funil organizado e follow-up automático para nenhum lead se perder. Diagnóstico por R$ 100, abatido na implementação.',
+      'CRM que se preenche sozinho, funil organizado e follow-up automático para nenhum lead se perder. Diagnóstico por R$ 160, abatido na implementação.',
   },
   service: {
     name: 'Automação de CRM e gestão de leads com IA',
     description:
-      'Captura automática de leads de anúncios, formulários e WhatsApp no CRM, qualificação com IA, follow-up por etapa e painel do funil. Começa com um diagnóstico de R$ 100, abatido na implementação.',
+      'Captura automática de leads de anúncios, formulários e WhatsApp no CRM, qualificação com IA, follow-up por etapa e painel do funil. Começa com um diagnóstico de R$ 160, abatido na implementação.',
   },
 
   hero: {
@@ -23,7 +23,7 @@ export const crm: LandingContent = {
       'Cada contato entra no CRM sozinho, com origem, interesse e próximo passo. O follow-up acontece no tempo certo e você enxerga o funil inteiro em um painel, sem ninguém digitar nada.',
     primary: { href: '#contato', label: 'Quero meu diagnóstico' },
     secondary: { href: '/calculadora', label: 'Calcular quanto estou perdendo' },
-    micro: ['R$ 100, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
+    micro: ['R$ 160, abatido 100% na implementação', 'Resultado em até 7 dias', 'Garantia de devolução'],
     demo: {
       header: 'Atendimento · Sua empresa',
       status: 'online agora',
@@ -190,7 +190,7 @@ export const crm: LandingContent = {
     ],
     guarantee: {
       ...offer.guarantee,
-      text: 'Se não encontrarmos pelo menos 5 horas por mês que podem ser automatizadas no seu comercial, devolvemos seus R$ 100.',
+      text: 'Se não encontrarmos pelo menos 5 horas por mês que podem ser automatizadas no seu comercial, devolvemos seus R$ 160.',
     },
   },
 
@@ -255,7 +255,7 @@ export const crm: LandingContent = {
     title: 'Descubra quantos leads seu funil está deixando escapar.',
     support: 'Em uma conversa de mapeamento, mostramos o que dá para automatizar e quanto isso vale para o seu negócio.',
     checks: [
-      'Diagnóstico por R$ 100, abatido na implementação',
+      'Diagnóstico por R$ 160, abatido na implementação',
       'Devolução garantida se não acharmos 5 horas por mês para automatizar',
       'Plano com valor e prazo fechados, sem compromisso de seguir',
     ],
